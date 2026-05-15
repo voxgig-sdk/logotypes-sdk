@@ -1,0 +1,37 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 4
+  metrics: count: path: 5
+  metrics: count: method: 5
+
+  entity: all: {
+    path: "/all": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: data: {
+    path: "/random/data": {
+      op: list: method: *GET
+    }
+    path: "/{logoName}/data": {
+      rename: param: "logoName": *"logo_name"
+      op: list: method: *GET
+    }
+  }
+
+  entity: get_logo_by_name: {
+    path: "/{logoName}": {
+      rename: param: "logoName": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: logo: {
+    path: "/random": {
+      op: load: method: *GET
+    }
+  }
+
+}

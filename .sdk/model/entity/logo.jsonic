@@ -1,0 +1,53 @@
+# Entity: logo
+
+main: kit: entity: logo: {
+
+  alias: field: {}
+
+  name: "logo"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "variant"
+                orig: "variant"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "version"
+                orig: "version"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/random"
+          parts: [
+            "random"
+          ]
+          select: {
+            exist: [
+              "variant"
+              "version"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

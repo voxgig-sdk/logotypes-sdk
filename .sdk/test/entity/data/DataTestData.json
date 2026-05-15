@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "data": {
+      "DATA00": {
+        "name": "s28",
+        "url": "s29",
+        "variant": [],
+        "version": [],
+        "logo_name": "LOGO_NAME01"
+      },
+      "DATA01": {
+        "name": "s50",
+        "url": "s51",
+        "variant": [],
+        "version": [],
+        "logo_name": "LOGO_NAME01"
+      },
+      "DATA02": {
+        "name": "s78",
+        "url": "s79",
+        "variant": [],
+        "version": [],
+        "logo_name": "LOGO_NAME01"
+      }
+    }
+  },
+  "new": {
+    "data": {
+      "data_ref01": {
+        "name": "sa0",
+        "url": "sa1",
+        "variant": [],
+        "version": []
+      }
+    }
+  }
+}

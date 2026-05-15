@@ -1,0 +1,306 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Logotypes API",
+    "description": "An open-source API that provides a vast collection of logos for various projects. Users can access random logos or search for specific logos with customizable parameters.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Logotypes.dev",
+      "url": "https://logotypes.dev/"
+    },
+    "license": {
+      "name": "Open Source"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.logotypes.dev",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/random": {
+      "get": {
+        "summary": "Get a random logo",
+        "description": "Returns a random logo image with optional customization parameters for variant and version",
+        "operationId": "getRandomLogo",
+        "tags": [
+          "Logos"
+        ],
+        "parameters": [
+          {
+            "name": "variant",
+            "in": "query",
+            "description": "The variant of the logo to retrieve",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "glyph",
+                "wordmark"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "The color version of the logo to retrieve",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "color",
+                "white",
+                "black"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved a random logo image",
+            "content": {
+              "image/svg+xml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/random/data": {
+      "get": {
+        "summary": "Get random logo data",
+        "description": "Returns metadata for a random logo with optional customization parameters for variant and version",
+        "operationId": "getRandomLogoData",
+        "tags": [
+          "Logo Data"
+        ],
+        "parameters": [
+          {
+            "name": "variant",
+            "in": "query",
+            "description": "The variant of the logo to retrieve data for",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "glyph",
+                "wordmark"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "The color version of the logo to retrieve data for",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "color",
+                "white",
+                "black"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved random logo data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogoData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{logoName}": {
+      "get": {
+        "summary": "Get a specific logo by name",
+        "description": "Returns a specific logo image by its name with optional customization parameters for variant and version",
+        "operationId": "getLogoByName",
+        "tags": [
+          "Logos"
+        ],
+        "parameters": [
+          {
+            "name": "logoName",
+            "in": "path",
+            "description": "The name of the logo to retrieve (e.g., 'spotify', 'apple')",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "spotify"
+          },
+          {
+            "name": "variant",
+            "in": "query",
+            "description": "The variant of the logo to retrieve",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "glyph",
+                "wordmark"
+              ]
+            }
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "The color version of the logo to retrieve",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "color",
+                "white",
+                "black"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the specified logo image",
+            "content": {
+              "image/svg+xml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Logo not found"
+          }
+        }
+      }
+    },
+    "/{logoName}/data": {
+      "get": {
+        "summary": "Get specific logo data by name",
+        "description": "Returns metadata for a specific logo by its name",
+        "operationId": "getLogoDataByName",
+        "tags": [
+          "Logo Data"
+        ],
+        "parameters": [
+          {
+            "name": "logoName",
+            "in": "path",
+            "description": "The name of the logo to retrieve data for (e.g., 'spotify', 'apple')",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "spotify"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved logo data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LogoData"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Logo not found"
+          }
+        }
+      }
+    },
+    "/all": {
+      "get": {
+        "summary": "Get all logos data",
+        "description": "Returns metadata for all available logos in the collection",
+        "operationId": "getAllLogosData",
+        "tags": [
+          "Logo Data"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved all logos data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogoData"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LogoData": {
+        "type": "object",
+        "description": "Metadata information about a logo",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the logo",
+            "example": "spotify"
+          },
+          "variants": {
+            "type": "array",
+            "description": "Available variants for the logo",
+            "items": {
+              "type": "string",
+              "enum": [
+                "glyph",
+                "wordmark"
+              ]
+            }
+          },
+          "versions": {
+            "type": "array",
+            "description": "Available color versions for the logo",
+            "items": {
+              "type": "string",
+              "enum": [
+                "color",
+                "white",
+                "black"
+              ]
+            }
+          },
+          "url": {
+            "type": "string",
+            "description": "The URL to access the logo",
+            "example": "https://www.logotypes.dev/spotify"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Logos",
+      "description": "Endpoints for retrieving logo images"
+    },
+    {
+      "name": "Logo Data",
+      "description": "Endpoints for retrieving logo metadata"
+    }
+  ]
+}

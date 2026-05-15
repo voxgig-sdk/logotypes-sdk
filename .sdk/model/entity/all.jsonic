@@ -1,0 +1,52 @@
+# Entity: all
+
+main: kit: entity: all: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "variant"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "version"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "all"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/all"
+          parts: [
+            "all"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

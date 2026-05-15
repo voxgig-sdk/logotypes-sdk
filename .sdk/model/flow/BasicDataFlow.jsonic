@@ -1,0 +1,26 @@
+# BasicDataFlow
+
+main: kit: flow: BasicDataFlow:
+{
+  entity: "data",
+  kind: "basic",
+  name: "BasicDataFlow",
+  step: [
+    {
+      match: {
+        logo_name: "logo_name01"
+      }
+
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDataFlow"
+}

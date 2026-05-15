@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "logo": {
+      "LOGO00": {},
+      "LOGO01": {},
+      "LOGO02": {}
+    }
+  },
+  "new": {
+    "logo": {
+      "logo_ref01": {}
+    }
+  }
+}

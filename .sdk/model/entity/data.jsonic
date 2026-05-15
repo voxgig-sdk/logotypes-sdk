@@ -1,0 +1,111 @@
+# Entity: data
+
+main: kit: entity: data: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "variant"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "version"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "data"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "variant"
+                orig: "variant"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "version"
+                orig: "version"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/random/data"
+          parts: [
+            "random"
+            "data"
+          ]
+          select: {
+            exist: [
+              "variant"
+              "version"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                example: "spotify"
+                kind: "param"
+                name: "logo_name"
+                orig: "logo_name"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/{logoName}/data"
+          parts: [
+            "{logo_name}"
+            "data"
+          ]
+          rename: {
+            param: {
+              logoName: "logo_name"
+            }
+          }
+          select: {
+            exist: [
+              "logo_name"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

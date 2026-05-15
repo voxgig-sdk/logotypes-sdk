@@ -1,0 +1,34 @@
+{
+  "existing": {
+    "all": {
+      "ALL00": {
+        "name": "s28",
+        "url": "s29",
+        "variant": [],
+        "version": []
+      },
+      "ALL01": {
+        "name": "s50",
+        "url": "s51",
+        "variant": [],
+        "version": []
+      },
+      "ALL02": {
+        "name": "s78",
+        "url": "s79",
+        "variant": [],
+        "version": []
+      }
+    }
+  },
+  "new": {
+    "all": {
+      "all_ref01": {
+        "name": "sa0",
+        "url": "sa1",
+        "variant": [],
+        "version": []
+      }
+    }
+  }
+}

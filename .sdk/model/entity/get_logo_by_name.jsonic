@@ -1,0 +1,69 @@
+# Entity: get_logo_by_name
+
+main: kit: entity: get_logo_by_name: {
+
+  alias: field: {}
+
+  name: "get_logo_by_name"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                example: "spotify"
+                kind: "param"
+                name: "id"
+                orig: "logo_name"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "variant"
+                orig: "variant"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "version"
+                orig: "version"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/{logoName}"
+          parts: [
+            "{id}"
+          ]
+          rename: {
+            param: {
+              logoName: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+              "variant"
+              "version"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
