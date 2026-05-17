@@ -1,9 +1,15 @@
 {
   "existing": {
     "get_logo_by_name": {
-      "GET_LOGO_BY_NAME00": {},
-      "GET_LOGO_BY_NAME01": {},
-      "GET_LOGO_BY_NAME02": {}
+      "GET_LOGO_BY_NAME00": {
+        "id": "GET_LOGO_BY_NAME00"
+      },
+      "GET_LOGO_BY_NAME01": {
+        "id": "GET_LOGO_BY_NAME01"
+      },
+      "GET_LOGO_BY_NAME02": {
+        "id": "GET_LOGO_BY_NAME02"
+      }
     }
   },
   "new": {

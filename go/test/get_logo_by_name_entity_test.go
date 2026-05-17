@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/logotypes-sdk"
-	"github.com/voxgig-sdk/logotypes-sdk/core"
+	sdk "github.com/voxgig-sdk/logotypes-sdk/go"
+	"github.com/voxgig-sdk/logotypes-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/logotypes-sdk/go/utility/struct"
 )
 
 func TestGetLogoByNameEntity(t *testing.T) {

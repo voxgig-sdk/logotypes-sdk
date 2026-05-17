@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/logotypes-sdk"
-	"github.com/voxgig-sdk/logotypes-sdk/core"
+	sdk "github.com/voxgig-sdk/logotypes-sdk/go"
+	"github.com/voxgig-sdk/logotypes-sdk/go/core"
 )
 
 func TestGetLogoByNameDirect(t *testing.T) {

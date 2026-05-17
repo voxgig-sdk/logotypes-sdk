@@ -1,9 +1,15 @@
 {
   "existing": {
     "logo": {
-      "LOGO00": {},
-      "LOGO01": {},
-      "LOGO02": {}
+      "LOGO00": {
+        "id": "LOGO00"
+      },
+      "LOGO01": {
+        "id": "LOGO01"
+      },
+      "LOGO02": {
+        "id": "LOGO02"
+      }
     }
   },
   "new": {

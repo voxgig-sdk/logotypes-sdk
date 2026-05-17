@@ -1,10 +1,10 @@
 package voxgiglogotypessdk
 
 import (
-	"github.com/voxgig-sdk/logotypes-sdk/core"
-	"github.com/voxgig-sdk/logotypes-sdk/entity"
-	"github.com/voxgig-sdk/logotypes-sdk/feature"
-	_ "github.com/voxgig-sdk/logotypes-sdk/utility"
+	"github.com/voxgig-sdk/logotypes-sdk/go/core"
+	"github.com/voxgig-sdk/logotypes-sdk/go/entity"
+	"github.com/voxgig-sdk/logotypes-sdk/go/feature"
+	_ "github.com/voxgig-sdk/logotypes-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

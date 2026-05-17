@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/logotypes-sdk/core"
+import "github.com/voxgig-sdk/logotypes-sdk/go/core"
 
 func resultHeadersUtil(ctx *core.Context) *core.Result {
 	response := ctx.Response
