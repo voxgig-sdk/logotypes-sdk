@@ -15,9 +15,6 @@ module LogotypesConfig
       },
       "options" => {
         "base" => "https://www.logotypes.dev",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

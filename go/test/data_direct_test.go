@@ -93,14 +93,12 @@ func dataDirectSetup(mockres any) *dataDirectSetupResult {
 	env := envOverride(map[string]any{
 		"LOGOTYPES_TEST_DATA_ENTID": map[string]any{},
 		"LOGOTYPES_TEST_LIVE":    "FALSE",
-		"LOGOTYPES_APIKEY":       "NONE",
 	})
 
 	live := env["LOGOTYPES_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["LOGOTYPES_APIKEY"],
 		}
 		client := sdk.NewLogotypesSDK(mergedOpts)
 

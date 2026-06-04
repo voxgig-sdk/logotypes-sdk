@@ -20,7 +20,20 @@
           }
         ],
         "title": "Logotypes API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Fetch brand logos by name or at random, with glyph/wordmark variants and color/black/white versions",
+        "homepage": "https://www.logotypes.dev",
+        "docs_url": "https://www.logotypes.dev",
+        "license_short": "Open source project; logos remain property of their respective brand owners",
+        "license_md": "- The Logotypes project itself is open source and maintained on GitHub by [@yceballost](https://github.com/yceballost).\n- Logos are trademarks of their respective brand owners; you are responsible for respecting each brand's usage guidelines.\n- No authentication or API key required at the time of writing.\n- Attribution: © Logotypes.dev.",
+        "about_md": "[Logotypes](https://www.logotypes.dev) is an open-source logo catalogue served as a small HTTP API. It is maintained by [@yceballost](https://github.com/yceballost) and indexes a wide range of brand logos that you can pull into projects such as design tools, dashboards, and demos.\n\nWhat you get from the API:\n\n- A random logo via `/random`, or a random logo's metadata via `/random/data`.\n- A specific logo by slug via `/{logoname}` (for example `/spotify`, `/apple`), and its metadata via `/{logoname}/data`.\n- The full catalogue listing via `/all`.\n- Query parameters `variant` (`glyph`, `wordmark`) and `version` (`color`, `black`, `white`) to choose which rendering to return.\n\nOperational notes: no authentication is required, CORS is enabled, and responses are typically served in the low-seconds range. Rate limits are not published — treat the service as a best-effort community resource.",
+        "entity_desc": {
+          "all": "The complete logo catalogue listing, served from `/all`.",
+          "data": "Metadata responses describing a logo (name, available variants and versions), reachable via `/{logoname}/data` and `/random/data`.",
+          "get_logo_by_name": "Retrieves a specific logo by its slug, e.g. `/spotify` or `/apple`, with optional `variant` and `version` query parameters.",
+          "logo": "A single logo image resource returned by `/{logoname}` or `/random`, optionally filtered with `variant=glyph|wordmark` and `version=color|black|white`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -28,7 +41,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "all": {

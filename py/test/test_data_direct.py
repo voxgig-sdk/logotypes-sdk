@@ -61,14 +61,12 @@ def _data_direct_setup(mockres):
     env = runner.env_override({
         "LOGOTYPES_TEST_DATA_ENTID": {},
         "LOGOTYPES_TEST_LIVE": "FALSE",
-        "LOGOTYPES_APIKEY": "NONE",
     })
 
     live = env.get("LOGOTYPES_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("LOGOTYPES_APIKEY"),
         }
         client = LogotypesSDK(merged_opts)
         return {
