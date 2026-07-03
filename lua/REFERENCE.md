@@ -30,12 +30,12 @@ Create a new SDK client instance.
 
 ### Static Methods
 
-#### `sdk.test(testopts, sdkopts)`
+#### `sdk.test(testopts?, sdkopts?)`
 
-Create a test client with mock features active. Both arguments may be `nil`.
+Create a test client with mock features active. Both arguments are optional.
 
 ```lua
-local client = sdk.test(nil, nil)
+local client = sdk.test()
 ```
 
 
@@ -115,7 +115,7 @@ local all = client:All(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:All(nil):list(nil, nil)
+local results, err = client:All():list()
 ```
 
 ### Common Methods
@@ -170,7 +170,7 @@ local data = client:Data(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Data(nil):list(nil, nil)
+local results, err = client:Data():list()
 ```
 
 ### Common Methods
@@ -216,7 +216,7 @@ local get_logo_by_name = client:GetLogoByName(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetLogoByName(nil):load({ id = "get_logo_by_name_id" }, nil)
+local result, err = client:GetLogoByName():load({ id = "get_logo_by_name_id" })
 ```
 
 ### Common Methods
@@ -262,7 +262,7 @@ local logo = client:Logo(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Logo(nil):load({ id = "logo_id" }, nil)
+local result, err = client:Logo():load({ id = "logo_id" })
 ```
 
 ### Common Methods

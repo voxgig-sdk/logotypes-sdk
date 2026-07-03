@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'LOGOTYPES_TEST_LOGO_ENTID': {},
     'LOGOTYPES_TEST_LIVE': 'FALSE',
+    'LOGOTYPES_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.LOGOTYPES_TEST_LIVE
 
   if (live) {
     const client = new LogotypesSDK({
+      apikey: env.LOGOTYPES_APIKEY,
     })
 
     let idmap: any = env['LOGOTYPES_TEST_LOGO_ENTID']

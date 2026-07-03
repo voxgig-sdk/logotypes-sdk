@@ -1,46 +1,13 @@
 {
-  "name": "logotypes",
-  "origin": "voxgig-sdk",
   "def": "logotypes_0.1.0.json",
   "main": {
+    "def": {
+      "desc": ""
+    },
     "kit": {
-      "info": {
-        "contact": {
-          "name": "Logotypes.dev",
-          "url": "https://logotypes.dev/"
-        },
-        "description": "An open-source API that provides a vast collection of logos for various projects. Users can access random logos or search for specific logos with customizable parameters.",
-        "license": {
-          "name": "Open Source"
-        },
-        "servers": [
-          {
-            "description": "Production server",
-            "url": "https://www.logotypes.dev"
-          }
-        ],
-        "title": "Logotypes API",
-        "version": "1.0.0",
-        "tagline": "Fetch brand logos by name or at random, with glyph/wordmark variants and color/black/white versions",
-        "homepage": "https://www.logotypes.dev",
-        "docs_url": "https://www.logotypes.dev",
-        "license_short": "Open source project; logos remain property of their respective brand owners",
-        "license_md": "- The Logotypes project itself is open source and maintained on GitHub by [@yceballost](https://github.com/yceballost).\n- Logos are trademarks of their respective brand owners; you are responsible for respecting each brand's usage guidelines.\n- No authentication or API key required at the time of writing.\n- Attribution: © Logotypes.dev.",
-        "about_md": "[Logotypes](https://www.logotypes.dev) is an open-source logo catalogue served as a small HTTP API. It is maintained by [@yceballost](https://github.com/yceballost) and indexes a wide range of brand logos that you can pull into projects such as design tools, dashboards, and demos.\n\nWhat you get from the API:\n\n- A random logo via `/random`, or a random logo's metadata via `/random/data`.\n- A specific logo by slug via `/{logoname}` (for example `/spotify`, `/apple`), and its metadata via `/{logoname}/data`.\n- The full catalogue listing via `/all`.\n- Query parameters `variant` (`glyph`, `wordmark`) and `version` (`color`, `black`, `white`) to choose which rendering to return.\n\nOperational notes: no authentication is required, CORS is enabled, and responses are typically served in the low-seconds range. Rate limits are not published — treat the service as a best-effort community resource.",
-        "entity_desc": {
-          "all": "The complete logo catalogue listing, served from `/all`.",
-          "data": "Metadata responses describing a logo (name, available variants and versions), reachable via `/{logoname}/data` and `/random/data`.",
-          "get_logo_by_name": "Retrieves a specific logo by its slug, e.g. `/spotify` or `/apple`, with optional `variant` and `version` query parameters.",
-          "logo": "A single logo image resource returned by `/{logoname}` or `/random`, optionally filtered with `variant=glyph|wordmark` and `version=color|black|white`."
-        },
-        "auth": false
-      },
       "config": {
         "auth": {
           "prefix": "Bearer"
-        },
-        "headers": {
-          "content-type": "application/json"
         },
         "docs_order": [
           "ts",
@@ -49,120 +16,126 @@
           "go",
           "rb",
           "lua"
-        ]
+        ],
+        "headers": {
+          "content-type": "application/json"
+        }
       },
       "entity": {
         "all": {
+          "active": true,
           "alias": {
             "field": {}
           },
           "fields": [
             {
+              "active": true,
               "name": "name",
               "req": false,
-              "type": "`$STRING`",
-              "active": true
+              "type": "`$STRING`"
             },
             {
+              "active": true,
               "name": "url",
               "req": false,
-              "type": "`$STRING`",
-              "active": true
+              "type": "`$STRING`"
             },
             {
+              "active": true,
               "name": "variant",
               "req": false,
-              "type": "`$ARRAY`",
-              "active": true
+              "type": "`$ARRAY`"
             },
             {
+              "active": true,
               "name": "version",
               "req": false,
-              "type": "`$ARRAY`",
-              "active": true
+              "type": "`$ARRAY`"
             }
           ],
           "name": "all",
           "op": {
             "list": {
+              "input": "data",
               "name": "list",
               "points": [
                 {
+                  "active": true,
+                  "args": {},
                   "method": "GET",
                   "orig": "/all",
                   "parts": [
                     "all"
                   ],
+                  "select": {},
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true,
-                  "args": {},
-                  "select": {}
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             }
           },
-          "active": true,
           "relations": {
             "ancestors": []
           }
         },
         "data": {
+          "active": true,
           "alias": {
             "field": {}
           },
           "fields": [
             {
+              "active": true,
               "name": "name",
               "req": false,
-              "type": "`$STRING`",
-              "active": true
+              "type": "`$STRING`"
             },
             {
+              "active": true,
               "name": "url",
               "req": false,
-              "type": "`$STRING`",
-              "active": true
+              "type": "`$STRING`"
             },
             {
+              "active": true,
               "name": "variant",
               "req": false,
-              "type": "`$ARRAY`",
-              "active": true
+              "type": "`$ARRAY`"
             },
             {
+              "active": true,
               "name": "version",
               "req": false,
-              "type": "`$ARRAY`",
-              "active": true
+              "type": "`$ARRAY`"
             }
           ],
           "name": "data",
           "op": {
             "list": {
+              "input": "data",
               "name": "list",
               "points": [
                 {
+                  "active": true,
                   "args": {
                     "query": [
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "variant",
                         "orig": "variant",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "version",
                         "orig": "version",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       }
                     ]
                   },
@@ -181,20 +154,20 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 },
                 {
+                  "active": true,
                   "args": {
                     "params": [
                       {
+                        "active": true,
                         "example": "spotify",
                         "kind": "param",
                         "name": "logo_name",
                         "orig": "logo_name",
                         "reqd": true,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       }
                     ]
                   },
@@ -217,56 +190,57 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             }
           },
-          "active": true,
           "relations": {
             "ancestors": []
           }
         },
         "get_logo_by_name": {
+          "active": true,
           "alias": {
             "field": {}
           },
+          "fields": [],
           "name": "get_logo_by_name",
           "op": {
             "load": {
+              "input": "data",
               "name": "load",
               "points": [
                 {
+                  "active": true,
                   "args": {
                     "params": [
                       {
+                        "active": true,
                         "example": "spotify",
                         "kind": "param",
                         "name": "id",
                         "orig": "logo_name",
                         "reqd": true,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "variant",
                         "orig": "variant",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "version",
                         "orig": "version",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       }
                     ]
                   },
@@ -290,46 +264,46 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             }
           },
-          "active": true,
-          "fields": [],
           "relations": {
             "ancestors": []
           }
         },
         "logo": {
+          "active": true,
           "alias": {
             "field": {}
           },
+          "fields": [],
           "name": "logo",
           "op": {
             "load": {
+              "input": "data",
               "name": "load",
               "points": [
                 {
+                  "active": true,
                   "args": {
                     "query": [
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "variant",
                         "orig": "variant",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "version",
                         "orig": "version",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       }
                     ]
                   },
@@ -347,15 +321,11 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             }
           },
-          "active": true,
-          "fields": [],
           "relations": {
             "ancestors": []
           }
@@ -363,9 +333,6 @@
       },
       "feature": {
         "test": {
-          "name": "test",
-          "title": "In-memory mock transport for testing without a live server",
-          "version": "0.0.1",
           "active": true,
           "config": {
             "options": {
@@ -373,6 +340,14 @@
             }
           },
           "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
             "PostConstruct": {
               "active": true,
               "await": false
@@ -381,25 +356,11 @@
               "active": true,
               "await": false
             },
-            "SetData": {
-              "active": true,
-              "await": false
-            },
-            "GetData": {
-              "active": true,
-              "await": false
-            },
-            "SetMatch": {
-              "active": true
-            },
-            "GetMatch": {
-              "active": true,
+            "PostOperation": {
+              "active": false,
               "await": false
             },
             "PrePoint": {
-              "active": true
-            },
-            "PreSpec": {
               "active": true,
               "await": false
             },
@@ -415,20 +376,32 @@
               "active": true,
               "await": false
             },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
             "PreTarget": {
               "active": false,
               "await": false
             },
-            "PostOperation": {
-              "active": false,
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
               "await": false
             }
           },
+          "name": "test",
           "target": {
-            "ts": {
+            "go": {
               "deps": {}
             },
-            "go": {
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
               "deps": {}
             },
             "lua": {
@@ -443,23 +416,30 @@
             "rb": {
               "deps": {}
             },
-            "go-cli": {
-              "deps": {}
-            },
-            "go-mcp": {
+            "ts": {
               "deps": {}
             }
-          }
+          },
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1"
         }
       },
       "flow": {
         "BasicAllFlow": {
+          "active": true,
           "entity": "all",
+          "key$": "BasicAllFlow",
           "kind": "basic",
           "name": "BasicAllFlow",
+          "param": {},
           "step": [
             {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
               "op": "list",
+              "spec": [],
               "valid": [
                 {
                   "apply": "ItemExists",
@@ -467,28 +447,27 @@
                     "ref": "all_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "match": {},
-              "data": {},
-              "input": {},
-              "spec": []
+              ]
             }
-          ],
-          "key$": "BasicAllFlow",
-          "active": true,
-          "param": {}
+          ]
         },
         "BasicDataFlow": {
+          "active": true,
           "entity": "data",
+          "key$": "BasicDataFlow",
           "kind": "basic",
           "name": "BasicDataFlow",
+          "param": {},
           "step": [
             {
+              "active": true,
+              "data": {},
+              "input": {},
               "match": {
                 "logo_name": "logo_name01"
               },
               "op": "list",
+              "spec": [],
               "valid": [
                 {
                   "apply": "ItemExists",
@@ -496,23 +475,21 @@
                     "ref": "data_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "data": {},
-              "input": {},
-              "spec": []
+              ]
             }
-          ],
-          "key$": "BasicDataFlow",
-          "active": true,
-          "param": {}
+          ]
         },
         "BasicGetLogoByNameFlow": {
+          "active": true,
           "entity": "get_logo_by_name",
+          "key$": "BasicGetLogoByNameFlow",
           "kind": "basic",
           "name": "BasicGetLogoByNameFlow",
+          "param": {},
           "step": [
             {
+              "active": true,
+              "data": {},
               "input": {
                 "ref": "get_logo_by_name_ref01",
                 "srcdatavar": "get_logo_by_name_ref01_data",
@@ -522,6 +499,7 @@
                 "id": "get_logo_by_name01"
               },
               "op": "load",
+              "spec": [],
               "valid": [
                 {
                   "apply": "TextFieldMark",
@@ -529,28 +507,29 @@
                     "mark": "Mark01-get_logo_by_name_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "data": {},
-              "spec": []
+              ]
             }
-          ],
-          "key$": "BasicGetLogoByNameFlow",
-          "active": true,
-          "param": {}
+          ]
         },
         "BasicLogoFlow": {
+          "active": true,
           "entity": "logo",
+          "key$": "BasicLogoFlow",
           "kind": "basic",
           "name": "BasicLogoFlow",
+          "param": {},
           "step": [
             {
+              "active": true,
+              "data": {},
               "input": {
                 "ref": "logo_ref01",
                 "srcdatavar": "logo_ref01_data",
                 "suffix": "_dt0"
               },
+              "match": {},
               "op": "load",
+              "spec": [],
               "valid": [
                 {
                   "apply": "TextFieldMark",
@@ -558,28 +537,56 @@
                     "mark": "Mark01-logo_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "match": {},
-              "data": {},
-              "spec": []
+              ]
             }
-          ],
-          "key$": "BasicLogoFlow",
-          "active": true,
-          "param": {}
+          ]
         }
       },
+      "info": {
+        "contact": {
+          "name": "Logotypes.dev",
+          "url": "https://logotypes.dev/"
+        },
+        "description": "An open-source API that provides a vast collection of logos for various projects. Users can access random logos or search for specific logos with customizable parameters.",
+        "license": {
+          "name": "Open Source"
+        },
+        "servers": [
+          {
+            "description": "Production server",
+            "url": "https://www.logotypes.dev"
+          }
+        ],
+        "title": "Logotypes API",
+        "version": "1.0.0"
+      },
+      "option": {},
       "target": {
-        "go-cli": {
-          "title": "Go CLI",
-          "ext": "go",
+        "go": {
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "logotypes"
           },
+          "name": "go",
+          "srcfeature": false,
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "logotypes"
+          },
+          "name": "go-cli",
           "phase": {
             "entity": {
               "active": false
@@ -594,19 +601,19 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-cli",
-          "active": true
+          "title": "Go CLI"
         },
         "go-mcp": {
-          "title": "Go MCP server",
-          "ext": "go",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "logotypes"
           },
+          "name": "go-mcp",
           "phase": {
             "entity": {
               "active": false
@@ -621,138 +628,120 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-mcp",
-          "active": true
-        },
-        "ts": {
-          "title": "TypeScript",
-          "ext": "ts",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "logotypes"
-          },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
-          "deps": {
-            "dotenv": {
-              "active": true,
-              "version": "^17.4.2",
-              "kind": "dev"
-            },
-            "typescript": {
-              "active": true,
-              "version": "^5.9.3",
-              "kind": "dev"
-            },
-            "@types/node": {
-              "active": true,
-              "version": "^25.6.0",
-              "kind": "dev"
-            }
-          },
-          "name": "ts",
-          "active": true
-        },
-        "go": {
-          "title": "Golang",
-          "ext": "go",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "logotypes"
-          },
-          "srcfeature": false,
-          "deps": {},
-          "name": "go",
-          "active": true
+          "title": "Go MCP server"
         },
         "lua": {
-          "title": "Lua",
-          "ext": "lua",
+          "active": true,
           "comment": {
             "line": "--"
           },
-          "module": {
-            "name": "logotypes"
-          },
-          "srcfeature": false,
           "deps": {
             "dkjson": {
               "active": true,
-              "version": "2.5",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.5"
             }
           },
+          "ext": "lua",
+          "module": {
+            "name": "logotypes"
+          },
           "name": "lua",
-          "active": true
+          "srcfeature": false,
+          "title": "Lua"
         },
         "php": {
-          "title": "PHP",
-          "ext": "php",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "php",
           "module": {
             "name": "logotypes"
           },
-          "srcfeature": false,
-          "deps": {},
           "name": "php",
-          "active": true
+          "srcfeature": false,
+          "title": "PHP"
         },
         "py": {
-          "title": "Python",
-          "ext": "py",
+          "active": true,
           "comment": {
             "line": "#"
           },
-          "module": {
-            "name": "logotypes"
-          },
-          "srcfeature": false,
           "deps": {
             "requests": {
               "active": true,
-              "version": "2.33",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.33"
             }
           },
-          "name": "py",
-          "active": true
-        },
-        "rb": {
-          "title": "Ruby",
-          "ext": "rb",
-          "comment": {
-            "line": "#"
-          },
+          "ext": "py",
           "module": {
             "name": "logotypes"
           },
+          "name": "py",
           "srcfeature": false,
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "comment": {
+            "line": "#"
+          },
           "deps": {
-            "voxgig-struct": {
-              "active": true,
-              "version": "0.0.10",
-              "kind": "prod"
-            },
             "json": {
               "active": true,
-              "version": "0",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "0"
+            },
+            "voxgig-struct": {
+              "active": true,
+              "kind": "prod",
+              "version": "0.0.10"
             }
           },
+          "ext": "rb",
+          "module": {
+            "name": "logotypes"
+          },
           "name": "rb",
-          "active": true
+          "srcfeature": false,
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "module": {
+            "name": "logotypes"
+          },
+          "name": "ts",
+          "title": "TypeScript"
         }
-      },
-      "option": {}
-    },
-    "def": {
-      "desc": ""
+      }
     }
-  }
+  },
+  "name": "logotypes",
+  "origin": "voxgig-sdk"
 }

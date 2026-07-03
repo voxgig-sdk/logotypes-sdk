@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://www.logotypes.dev",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -29,56 +32,56 @@ def make_config():
       "all": {
         "fields": [
           {
+            "active": True,
             "name": "name",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "url",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "variant",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "version",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 3,
           },
         ],
         "name": "all",
         "op": {
           "list": {
+            "input": "data",
             "name": "list",
             "points": [
               {
+                "active": True,
+                "args": {},
                 "method": "GET",
                 "orig": "/all",
                 "parts": [
                   "all",
                 ],
+                "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
-                "args": {},
-                "select": {},
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "list",
           },
         },
@@ -89,57 +92,59 @@ def make_config():
       "data": {
         "fields": [
           {
+            "active": True,
             "name": "name",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "url",
             "req": False,
             "type": "`$STRING`",
-            "active": True,
             "index$": 1,
           },
           {
+            "active": True,
             "name": "variant",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 2,
           },
           {
+            "active": True,
             "name": "version",
             "req": False,
             "type": "`$ARRAY`",
-            "active": True,
             "index$": 3,
           },
         ],
         "name": "data",
         "op": {
           "list": {
+            "input": "data",
             "name": "list",
             "points": [
               {
+                "active": True,
                 "args": {
                   "query": [
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "variant",
                       "orig": "variant",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "version",
                       "orig": "version",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -159,20 +164,20 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
                 "index$": 0,
               },
               {
+                "active": True,
                 "args": {
                   "params": [
                     {
+                      "active": True,
                       "example": "spotify",
                       "kind": "param",
                       "name": "logo_name",
                       "orig": "logo_name",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -196,11 +201,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
                 "index$": 1,
               },
             ],
-            "input": "data",
             "key$": "list",
           },
         },
@@ -213,37 +216,39 @@ def make_config():
         "name": "get_logo_by_name",
         "op": {
           "load": {
+            "input": "data",
             "name": "load",
             "points": [
               {
+                "active": True,
                 "args": {
                   "params": [
                     {
+                      "active": True,
                       "example": "spotify",
                       "kind": "param",
                       "name": "id",
                       "orig": "logo_name",
                       "reqd": True,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                   "query": [
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "variant",
                       "orig": "variant",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "version",
                       "orig": "version",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -268,11 +273,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "load",
           },
         },
@@ -285,26 +288,28 @@ def make_config():
         "name": "logo",
         "op": {
           "load": {
+            "input": "data",
             "name": "load",
             "points": [
               {
+                "active": True,
                 "args": {
                   "query": [
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "variant",
                       "orig": "variant",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "version",
                       "orig": "version",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -323,11 +328,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "load",
           },
         },

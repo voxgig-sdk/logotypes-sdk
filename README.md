@@ -1,21 +1,8 @@
 # Logotypes SDK
 
-Fetch brand logos by name or at random, with glyph/wordmark variants and color/black/white versions
+Logotypes API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Logotypes API
-
-[Logotypes](https://www.logotypes.dev) is an open-source logo catalogue served as a small HTTP API. It is maintained by [@yceballost](https://github.com/yceballost) and indexes a wide range of brand logos that you can pull into projects such as design tools, dashboards, and demos.
-
-What you get from the API:
-
-- A random logo via `/random`, or a random logo's metadata via `/random/data`.
-- A specific logo by slug via `/{logoname}` (for example `/spotify`, `/apple`), and its metadata via `/{logoname}/data`.
-- The full catalogue listing via `/all`.
-- Query parameters `variant` (`glyph`, `wordmark`) and `version` (`color`, `black`, `white`) to choose which rendering to return.
-
-Operational notes: no authentication is required, CORS is enabled, and responses are typically served in the low-seconds range. Rate limits are not published — treat the service as a best-effort community resource.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install logotypes-sdk
 luarocks install logotypes-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { LogotypesSDK } from 'logotypes'
 
-const client = new LogotypesSDK({})
+const client = new LogotypesSDK({
+  apikey: process.env.LOGOTYPES_APIKEY,
+})
 
 // List all alls
 const alls = await client.All().list()
+console.log(alls.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,10 +90,10 @@ The API exposes 4 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **All** | The complete logo catalogue listing, served from `/all`. | `/all` |
-| **Data** | Metadata responses describing a logo (name, available variants and versions), reachable via `/{logoname}/data` and `/random/data`. | `/random/data` |
-| **GetLogoByName** | Retrieves a specific logo by its slug, e.g. `/spotify` or `/apple`, with optional `variant` and `version` query parameters. | `/{logoName}` |
-| **Logo** | A single logo image resource returned by `/{logoname}` or `/random`, optionally filtered with `variant=glyph|wordmark` and `version=color|black|white`. | `/random` |
+| **All** |  | `/all` |
+| **Data** |  | `/random/data` |
+| **GetLogoByName** |  | `/{logoName}` |
+| **Logo** |  | `/random` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -114,12 +103,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from logotypes_sdk import LogotypesSDK
 
-client = LogotypesSDK({})
+client = LogotypesSDK({
+    "apikey": os.environ.get("LOGOTYPES_APIKEY"),
+})
 
 # List all alls
-alls, err = client.All(None).list(None, None)
+alls, err = client.All().list()
+print(alls)
 ```
 
 ### PHP
@@ -128,10 +121,13 @@ alls, err = client.All(None).list(None, None)
 <?php
 require_once 'logotypes_sdk.php';
 
-$client = new LogotypesSDK([]);
+$client = new LogotypesSDK([
+    "apikey" => getenv("LOGOTYPES_APIKEY"),
+]);
 
 // List all alls
-[$alls, $err] = $client->All(null)->list(null, null);
+[$alls, $err] = $client->All()->list();
+print_r($alls);
 ```
 
 ### Golang
@@ -139,10 +135,13 @@ $client = new LogotypesSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/logotypes-sdk/go"
 
-client := sdk.NewLogotypesSDK(map[string]any{})
+client := sdk.NewLogotypesSDK(map[string]any{
+    "apikey": os.Getenv("LOGOTYPES_APIKEY"),
+})
 
 // List all alls
 alls, err := client.All(nil).List(nil, nil)
+fmt.Println(alls)
 ```
 
 ### Ruby
@@ -150,10 +149,13 @@ alls, err := client.All(nil).List(nil, nil)
 ```ruby
 require_relative "Logotypes_sdk"
 
-client = LogotypesSDK.new({})
+client = LogotypesSDK.new({
+  "apikey" => ENV["LOGOTYPES_APIKEY"],
+})
 
 # List all alls
-alls, err = client.All(nil).list(nil, nil)
+alls, err = client.All().list
+puts alls
 ```
 
 ### Lua
@@ -161,10 +163,13 @@ alls, err = client.All(nil).list(nil, nil)
 ```lua
 local sdk = require("logotypes_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("LOGOTYPES_APIKEY"),
+})
 
 -- List all alls
-local alls, err = client:All(nil):list(nil, nil)
+local alls, err = client:All():list()
+print(alls)
 ```
 
 ## Unit testing in offline mode
@@ -183,25 +188,21 @@ const result = await client.All().load({ id: 'test01' })
 ### Python
 
 ```python
-client = LogotypesSDK.test(None, None)
-result, err = client.All(None).load(
-    {"id": "test01"}, None
-)
+client = LogotypesSDK.test()
+result, err = client.All().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = LogotypesSDK::test(null, null);
-[$result, $err] = $client->All(null)->load(
-    ["id" => "test01"], null
-);
+$client = LogotypesSDK::test();
+[$result, $err] = $client->All()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.All(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -210,19 +211,15 @@ result, err := client.All(nil).Load(
 ### Ruby
 
 ```ruby
-client = LogotypesSDK.test(nil, nil)
-result, err = client.All(nil).load(
-  { "id" => "test01" }, nil
-)
+client = LogotypesSDK.test
+result, err = client.All().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:All(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:All():load({ id = "test01" })
 ```
 
 ## How it works
@@ -326,15 +323,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Logotypes API
-
-- Upstream: [https://www.logotypes.dev](https://www.logotypes.dev)
-
-- The Logotypes project itself is open source and maintained on GitHub by [@yceballost](https://github.com/yceballost).
-- Logos are trademarks of their respective brand owners; you are responsible for respecting each brand's usage guidelines.
-- No authentication or API key required at the time of writing.
-- Attribution: © Logotypes.dev.
 
 ---
 

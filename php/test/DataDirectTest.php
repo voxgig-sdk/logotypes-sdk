@@ -68,12 +68,14 @@ function data_direct_setup($mockres)
     $env = Runner::env_override([
         "LOGOTYPES_TEST_DATA_ENTID" => [],
         "LOGOTYPES_TEST_LIVE" => "FALSE",
+        "LOGOTYPES_APIKEY" => "NONE",
     ]);
 
     $live = $env["LOGOTYPES_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["LOGOTYPES_APIKEY"],
         ];
         $client = new LogotypesSDK($merged_opts);
         return [

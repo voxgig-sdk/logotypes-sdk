@@ -20,6 +20,9 @@ class LogotypesConfig
             ],
             "options" => [
                 "base" => "https://www.logotypes.dev",
+                "auth" => [
+                    "prefix" => "Bearer",
+                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -34,56 +37,56 @@ class LogotypesConfig
         'all' => [
           'fields' => [
             [
+              'active' => true,
               'name' => 'name',
               'req' => false,
               'type' => '`$STRING`',
-              'active' => true,
               'index$' => 0,
             ],
             [
+              'active' => true,
               'name' => 'url',
               'req' => false,
               'type' => '`$STRING`',
-              'active' => true,
               'index$' => 1,
             ],
             [
+              'active' => true,
               'name' => 'variant',
               'req' => false,
               'type' => '`$ARRAY`',
-              'active' => true,
               'index$' => 2,
             ],
             [
+              'active' => true,
               'name' => 'version',
               'req' => false,
               'type' => '`$ARRAY`',
-              'active' => true,
               'index$' => 3,
             ],
           ],
           'name' => 'all',
           'op' => [
             'list' => [
+              'input' => 'data',
               'name' => 'list',
               'points' => [
                 [
+                  'active' => true,
+                  'args' => [],
                   'method' => 'GET',
                   'orig' => '/all',
                   'parts' => [
                     'all',
                   ],
+                  'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'active' => true,
-                  'args' => [],
-                  'select' => [],
                   'index$' => 0,
                 ],
               ],
-              'input' => 'data',
               'key$' => 'list',
             ],
           ],
@@ -94,57 +97,59 @@ class LogotypesConfig
         'data' => [
           'fields' => [
             [
+              'active' => true,
               'name' => 'name',
               'req' => false,
               'type' => '`$STRING`',
-              'active' => true,
               'index$' => 0,
             ],
             [
+              'active' => true,
               'name' => 'url',
               'req' => false,
               'type' => '`$STRING`',
-              'active' => true,
               'index$' => 1,
             ],
             [
+              'active' => true,
               'name' => 'variant',
               'req' => false,
               'type' => '`$ARRAY`',
-              'active' => true,
               'index$' => 2,
             ],
             [
+              'active' => true,
               'name' => 'version',
               'req' => false,
               'type' => '`$ARRAY`',
-              'active' => true,
               'index$' => 3,
             ],
           ],
           'name' => 'data',
           'op' => [
             'list' => [
+              'input' => 'data',
               'name' => 'list',
               'points' => [
                 [
+                  'active' => true,
                   'args' => [
                     'query' => [
                       [
+                        'active' => true,
                         'kind' => 'query',
                         'name' => 'variant',
                         'orig' => 'variant',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                       [
+                        'active' => true,
                         'kind' => 'query',
                         'name' => 'version',
                         'orig' => 'version',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                     ],
                   ],
@@ -164,20 +169,20 @@ class LogotypesConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'active' => true,
                   'index$' => 0,
                 ],
                 [
+                  'active' => true,
                   'args' => [
                     'params' => [
                       [
+                        'active' => true,
                         'example' => 'spotify',
                         'kind' => 'param',
                         'name' => 'logo_name',
                         'orig' => 'logo_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                     ],
                   ],
@@ -201,11 +206,9 @@ class LogotypesConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'active' => true,
                   'index$' => 1,
                 ],
               ],
-              'input' => 'data',
               'key$' => 'list',
             ],
           ],
@@ -218,37 +221,39 @@ class LogotypesConfig
           'name' => 'get_logo_by_name',
           'op' => [
             'load' => [
+              'input' => 'data',
               'name' => 'load',
               'points' => [
                 [
+                  'active' => true,
                   'args' => [
                     'params' => [
                       [
+                        'active' => true,
                         'example' => 'spotify',
                         'kind' => 'param',
                         'name' => 'id',
                         'orig' => 'logo_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                     ],
                     'query' => [
                       [
+                        'active' => true,
                         'kind' => 'query',
                         'name' => 'variant',
                         'orig' => 'variant',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                       [
+                        'active' => true,
                         'kind' => 'query',
                         'name' => 'version',
                         'orig' => 'version',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                     ],
                   ],
@@ -273,11 +278,9 @@ class LogotypesConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'active' => true,
                   'index$' => 0,
                 ],
               ],
-              'input' => 'data',
               'key$' => 'load',
             ],
           ],
@@ -290,26 +293,28 @@ class LogotypesConfig
           'name' => 'logo',
           'op' => [
             'load' => [
+              'input' => 'data',
               'name' => 'load',
               'points' => [
                 [
+                  'active' => true,
                   'args' => [
                     'query' => [
                       [
+                        'active' => true,
                         'kind' => 'query',
                         'name' => 'variant',
                         'orig' => 'variant',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                       [
+                        'active' => true,
                         'kind' => 'query',
                         'name' => 'version',
                         'orig' => 'version',
                         'reqd' => false,
                         'type' => '`$STRING`',
-                        'active' => true,
                       ],
                     ],
                   ],
@@ -328,11 +333,9 @@ class LogotypesConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'active' => true,
                   'index$' => 0,
                 ],
               ],
-              'input' => 'data',
               'key$' => 'load',
             ],
           ],
