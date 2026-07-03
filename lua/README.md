@@ -10,7 +10,7 @@ The Lua SDK for the Logotypes API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install logotypes-sdk
+luarocks install voxgig-sdk-logotypes
 ```
 
 If the module is not yet published, add the source directory to

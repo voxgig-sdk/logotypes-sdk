@@ -10,13 +10,13 @@ The Ruby SDK for the Logotypes API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install logotypes-sdk
+gem install voxgig-sdk-logotypes
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "logotypes-sdk"
+gem "voxgig-sdk-logotypes"
 ```
 
 Then run:

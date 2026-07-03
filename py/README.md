@@ -10,7 +10,7 @@ The Python SDK for the Logotypes API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install logotypes-sdk
+pip install voxgig-sdk-logotypes
 ```
 
 Or install from source:

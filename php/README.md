@@ -10,7 +10,7 @@ The PHP SDK for the Logotypes API — an entity-oriented client using PHP conven
 
 ## Install
 ```bash
-composer require voxgig/logotypes-sdk
+composer require voxgig-sdk/logotypes
 ```
 
 

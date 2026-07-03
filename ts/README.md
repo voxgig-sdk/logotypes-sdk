@@ -10,7 +10,7 @@ The TypeScript SDK for the Logotypes API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install logotypes
+npm install @voxgig-sdk/logotypes
 ```
 ## Tutorial: your first API call
 
