@@ -207,56 +207,28 @@ class LogotypesSDK {
 
 
 
-  _all?: AllEntity
-
-  // Idiomatic facade: `client.all.list()` / `client.all.load({ id })`.
-  get all(): AllEntity {
-    return (this._all ??= new AllEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.all` instead. */
+  // Entity access: `client.All().list()` / `client.All().load({ id })`.
   All(data?: any) {
     const self = this
     return new AllEntity(self,data)
   }
 
 
-  _data?: DataEntity
-
-  // Idiomatic facade: `client.data.list()` / `client.data.load({ id })`.
-  get data(): DataEntity {
-    return (this._data ??= new DataEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.data` instead. */
+  // Entity access: `client.Data().list()` / `client.Data().load({ id })`.
   Data(data?: any) {
     const self = this
     return new DataEntity(self,data)
   }
 
 
-  _get_logo_by_name?: GetLogoByNameEntity
-
-  // Idiomatic facade: `client.get_logo_by_name.list()` / `client.get_logo_by_name.load({ id })`.
-  get get_logo_by_name(): GetLogoByNameEntity {
-    return (this._get_logo_by_name ??= new GetLogoByNameEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.get_logo_by_name` instead. */
+  // Entity access: `client.GetLogoByName().list()` / `client.GetLogoByName().load({ id })`.
   GetLogoByName(data?: any) {
     const self = this
     return new GetLogoByNameEntity(self,data)
   }
 
 
-  _logo?: LogoEntity
-
-  // Idiomatic facade: `client.logo.list()` / `client.logo.load({ id })`.
-  get logo(): LogoEntity {
-    return (this._logo ??= new LogoEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.logo` instead. */
+  // Entity access: `client.Logo().list()` / `client.Logo().load({ id })`.
   Logo(data?: any) {
     const self = this
     return new LogoEntity(self,data)

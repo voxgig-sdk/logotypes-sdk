@@ -92,7 +92,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## AllEntity
 
 ```python
-all = client.all
+all = client.All()
 ```
 
 ### Fields
@@ -111,7 +111,9 @@ all = client.all
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.all.list({})
+results = client.All().list({})
+for all in results:
+    print(all)
 ```
 
 ### Common Methods
@@ -146,7 +148,7 @@ Return the entity name.
 ## DataEntity
 
 ```python
-data = client.data
+data = client.Data()
 ```
 
 ### Fields
@@ -165,7 +167,9 @@ data = client.data
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.data.list({})
+results = client.Data().list({})
+for data in results:
+    print(data)
 ```
 
 ### Common Methods
@@ -200,7 +204,7 @@ Return the entity name.
 ## GetLogoByNameEntity
 
 ```python
-get_logo_by_name = client.get_logo_by_name
+get_logo_by_name = client.GetLogoByName()
 ```
 
 ### Operations
@@ -210,7 +214,7 @@ get_logo_by_name = client.get_logo_by_name
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.get_logo_by_name.load({"id": "get_logo_by_name_id"})
+result = client.GetLogoByName().load({"id": "get_logo_by_name_id"})
 ```
 
 ### Common Methods
@@ -245,7 +249,7 @@ Return the entity name.
 ## LogoEntity
 
 ```python
-logo = client.logo
+logo = client.Logo()
 ```
 
 ### Operations
@@ -255,7 +259,7 @@ logo = client.logo
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.logo.load({"id": "logo_id"})
+result = client.Logo().load({"id": "logo_id"})
 ```
 
 ### Common Methods

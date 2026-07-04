@@ -31,14 +31,16 @@ from logotypes_sdk import LogotypesSDK
 client = LogotypesSDK()
 ```
 
-### 2. List alls
+### 2. List all records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.all.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    alls = client.All().list({})
+    for all in alls:
+        print(all)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = LogotypesSDK.test()
 
-result = client.all.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+all = client.All().load({"id": "test01"})
+# all contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -163,7 +166,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `All` | `(data) -> AllEntity` | Create a All entity instance. |
+| `All` | `(data) -> AllEntity` | Create an All entity instance. |
 | `Data` | `(data) -> DataEntity` | Create a Data entity instance. |
 | `GetLogoByName` | `(data) -> GetLogoByNameEntity` | Create a GetLogoByName entity instance. |
 | `Logo` | `(data) -> LogoEntity` | Create a Logo entity instance. |
@@ -257,7 +260,7 @@ API path: `/random`
 
 ### All
 
-Create an instance: `const all = client.all`
+Create an instance: `all = client.All()`
 
 #### Operations
 
@@ -276,14 +279,14 @@ Create an instance: `const all = client.all`
 
 #### Example: List
 
-```ts
-const alls = await client.all.list()
+```python
+alls = client.All().list({})
 ```
 
 
 ### Data
 
-Create an instance: `const data = client.data`
+Create an instance: `data = client.Data()`
 
 #### Operations
 
@@ -302,14 +305,14 @@ Create an instance: `const data = client.data`
 
 #### Example: List
 
-```ts
-const datas = await client.data.list()
+```python
+datas = client.Data().list({})
 ```
 
 
 ### GetLogoByName
 
-Create an instance: `const get_logo_by_name = client.get_logo_by_name`
+Create an instance: `get_logo_by_name = client.GetLogoByName()`
 
 #### Operations
 
@@ -319,14 +322,14 @@ Create an instance: `const get_logo_by_name = client.get_logo_by_name`
 
 #### Example: Load
 
-```ts
-const get_logo_by_name = await client.get_logo_by_name.load({ id: 'get_logo_by_name_id' })
+```python
+get_logo_by_name = client.GetLogoByName().load({"id": "get_logo_by_name_id"})
 ```
 
 
 ### Logo
 
-Create an instance: `const logo = client.logo`
+Create an instance: `logo = client.Logo()`
 
 #### Operations
 
@@ -336,8 +339,8 @@ Create an instance: `const logo = client.logo`
 
 #### Example: Load
 
-```ts
-const logo = await client.logo.load({ id: 'logo_id' })
+```python
+logo = client.Logo().load({"id": "logo_id"})
 ```
 
 
@@ -411,7 +414,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-all = client.all
+all = client.All()
 all.load({"id": "example_id"})
 
 # all.data_get() now returns the loaded all data

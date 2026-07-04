@@ -208,52 +208,28 @@ class LogotypesSDK
   end
 
 
-  # Idiomatic facade: client.all.list / client.all.load({ "id" => ... })
-  def all
-    require_relative 'entity/all_entity'
-    @all ||= AllEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.all instead.
+  # Canonical facade: client.All.list / client.All.load({ "id" => ... })
   def All(data = nil)
     require_relative 'entity/all_entity'
     AllEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.data.list / client.data.load({ "id" => ... })
-  def data
-    require_relative 'entity/data_entity'
-    @data ||= DataEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.data instead.
+  # Canonical facade: client.Data.list / client.Data.load({ "id" => ... })
   def Data(data = nil)
     require_relative 'entity/data_entity'
     DataEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.get_logo_by_name.list / client.get_logo_by_name.load({ "id" => ... })
-  def get_logo_by_name
-    require_relative 'entity/get_logo_by_name_entity'
-    @get_logo_by_name ||= GetLogoByNameEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_logo_by_name instead.
+  # Canonical facade: client.GetLogoByName.list / client.GetLogoByName.load({ "id" => ... })
   def GetLogoByName(data = nil)
     require_relative 'entity/get_logo_by_name_entity'
     GetLogoByNameEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.logo.list / client.logo.load({ "id" => ... })
-  def logo
-    require_relative 'entity/logo_entity'
-    @logo ||= LogoEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.logo instead.
+  # Canonical facade: client.Logo.list / client.Logo.load({ "id" => ... })
   def Logo(data = nil)
     require_relative 'entity/logo_entity'
     LogoEntity.new(self, data)

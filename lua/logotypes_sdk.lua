@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:all():list() / client:all():load({ id = ... })
-function LogotypesSDK:all(data)
+-- Idiomatic facade: client:All():list() / client:All():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function LogotypesSDK:All(data)
   local EntityMod = require("entity.all_entity")
   if data == nil then
     if self._all == nil then
@@ -256,15 +257,10 @@ function LogotypesSDK:all(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:all() instead.
-function LogotypesSDK:All(data)
-  local EntityMod = require("entity.all_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:data():list() / client:data():load({ id = ... })
-function LogotypesSDK:data(data)
+-- Idiomatic facade: client:Data():list() / client:Data():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function LogotypesSDK:Data(data)
   local EntityMod = require("entity.data_entity")
   if data == nil then
     if self._data == nil then
@@ -275,15 +271,10 @@ function LogotypesSDK:data(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:data() instead.
-function LogotypesSDK:Data(data)
-  local EntityMod = require("entity.data_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:get_logo_by_name():list() / client:get_logo_by_name():load({ id = ... })
-function LogotypesSDK:get_logo_by_name(data)
+-- Idiomatic facade: client:GetLogoByName():list() / client:GetLogoByName():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function LogotypesSDK:GetLogoByName(data)
   local EntityMod = require("entity.get_logo_by_name_entity")
   if data == nil then
     if self._get_logo_by_name == nil then
@@ -294,15 +285,10 @@ function LogotypesSDK:get_logo_by_name(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:get_logo_by_name() instead.
-function LogotypesSDK:GetLogoByName(data)
-  local EntityMod = require("entity.get_logo_by_name_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:logo():list() / client:logo():load({ id = ... })
-function LogotypesSDK:logo(data)
+-- Idiomatic facade: client:Logo():list() / client:Logo():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function LogotypesSDK:Logo(data)
   local EntityMod = require("entity.logo_entity")
   if data == nil then
     if self._logo == nil then
@@ -310,12 +296,6 @@ function LogotypesSDK:logo(data)
     end
     return self._logo
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:logo() instead.
-function LogotypesSDK:Logo(data)
-  local EntityMod = require("entity.logo_entity")
   return EntityMod.new(self, data)
 end
 

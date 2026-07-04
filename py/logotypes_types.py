@@ -4,58 +4,54 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class All:
-    name: Optional[str] = None
-    url: Optional[str] = None
-    variant: Optional[list] = None
-    version: Optional[list] = None
+class All(TypedDict, total=False):
+    name: str
+    url: str
+    variant: list
+    version: list
 
 
-@dataclass
-class AllListMatch:
-    name: Optional[str] = None
-    url: Optional[str] = None
-    variant: Optional[list] = None
-    version: Optional[list] = None
+class AllListMatch(TypedDict, total=False):
+    name: str
+    url: str
+    variant: list
+    version: list
 
 
-@dataclass
-class Data:
-    name: Optional[str] = None
-    url: Optional[str] = None
-    variant: Optional[list] = None
-    version: Optional[list] = None
+class Data(TypedDict, total=False):
+    name: str
+    url: str
+    variant: list
+    version: list
 
 
-@dataclass
-class DataListMatch:
+class DataListMatch(TypedDict):
     logo_name: str
 
 
-@dataclass
-class GetLogoByName:
+class GetLogoByName(TypedDict):
     pass
 
 
-@dataclass
-class GetLogoByNameLoadMatch:
+class GetLogoByNameLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class Logo:
+class Logo(TypedDict):
     pass
 
 
-@dataclass
-class LogoLoadMatch:
+class LogoLoadMatch(TypedDict):
     pass
-

@@ -233,10 +233,10 @@ class LogotypesSDK
 
     private $_all = null;
 
-    // Idiomatic facade: $client->all()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias All() (PHP method
-    // names are case-insensitive).
-    public function all($data = null)
+    // Canonical facade: $client->All()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->all()
+    // resolves here too.
+    public function All($data = null)
     {
         require_once __DIR__ . '/entity/all_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class LogotypesSDK
 
     private $_data = null;
 
-    // Idiomatic facade: $client->data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Data() (PHP method
-    // names are case-insensitive).
-    public function data($data = null)
+    // Canonical facade: $client->Data()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->data()
+    // resolves here too.
+    public function Data($data = null)
     {
         require_once __DIR__ . '/entity/data_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class LogotypesSDK
 
     private $_get_logo_by_name = null;
 
-    // Idiomatic facade: $client->get_logo_by_name()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetLogoByName() (PHP method
-    // names are case-insensitive).
-    public function get_logo_by_name($data = null)
+    // Canonical facade: $client->GetLogoByName()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_logo_by_name()
+    // resolves here too.
+    public function GetLogoByName($data = null)
     {
         require_once __DIR__ . '/entity/get_logo_by_name_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class LogotypesSDK
 
     private $_logo = null;
 
-    // Idiomatic facade: $client->logo()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Logo() (PHP method
-    // names are case-insensitive).
-    public function logo($data = null)
+    // Canonical facade: $client->Logo()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->logo()
+    // resolves here too.
+    public function Logo($data = null)
     {
         require_once __DIR__ . '/entity/logo_entity.php';
         if ($data === null) {

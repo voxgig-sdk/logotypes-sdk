@@ -98,7 +98,7 @@ same parameters as `direct()`. Raises on error.
 ## AllEntity
 
 ```ruby
-all = client.all
+all = client.All
 ```
 
 ### Fields
@@ -117,7 +117,7 @@ all = client.all
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.all.list(nil)
+results = client.All.list(nil)
 ```
 
 ### Common Methods
@@ -153,7 +153,7 @@ Return the entity name.
 ## DataEntity
 
 ```ruby
-data = client.data
+data = client.Data
 ```
 
 ### Fields
@@ -172,7 +172,7 @@ data = client.data
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.data.list(nil)
+results = client.Data.list(nil)
 ```
 
 ### Common Methods
@@ -208,7 +208,7 @@ Return the entity name.
 ## GetLogoByNameEntity
 
 ```ruby
-get_logo_by_name = client.get_logo_by_name
+get_logo_by_name = client.GetLogoByName
 ```
 
 ### Operations
@@ -218,7 +218,7 @@ get_logo_by_name = client.get_logo_by_name
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.get_logo_by_name.load({ "id" => "get_logo_by_name_id" })
+result = client.GetLogoByName.load({ "id" => "get_logo_by_name_id" })
 ```
 
 ### Common Methods
@@ -254,7 +254,7 @@ Return the entity name.
 ## LogoEntity
 
 ```ruby
-logo = client.logo
+logo = client.Logo
 ```
 
 ### Operations
@@ -264,7 +264,7 @@ logo = client.logo
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.logo.load({ "id" => "logo_id" })
+result = client.Logo.load({ "id" => "logo_id" })
 ```
 
 ### Common Methods

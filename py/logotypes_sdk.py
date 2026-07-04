@@ -220,73 +220,33 @@ class LogotypesSDK:
         }
 
 
-    @property
-    def all(self):
-        """Idiomatic facade: client.all.list() / client.all.load({"id": ...})."""
-        from entity.all_entity import AllEntity
-        cached = getattr(self, "_all", None)
-        if cached is None:
-            cached = AllEntity(self, None)
-            self._all = cached
-        return cached
-
-    def All(self, data=None):
-        # Deprecated: use client.all instead.
+    def All(self, data=None) -> "AllEntity":
+        """Entity factory: client.All().list({}) / client.All().load({"id": ...})."""
         from entity.all_entity import AllEntity
         return AllEntity(self, data)
 
 
-    @property
-    def data(self):
-        """Idiomatic facade: client.data.list() / client.data.load({"id": ...})."""
-        from entity.data_entity import DataEntity
-        cached = getattr(self, "_data", None)
-        if cached is None:
-            cached = DataEntity(self, None)
-            self._data = cached
-        return cached
-
-    def Data(self, data=None):
-        # Deprecated: use client.data instead.
+    def Data(self, data=None) -> "DataEntity":
+        """Entity factory: client.Data().list({}) / client.Data().load({"id": ...})."""
         from entity.data_entity import DataEntity
         return DataEntity(self, data)
 
 
-    @property
-    def get_logo_by_name(self):
-        """Idiomatic facade: client.get_logo_by_name.list() / client.get_logo_by_name.load({"id": ...})."""
-        from entity.get_logo_by_name_entity import GetLogoByNameEntity
-        cached = getattr(self, "_get_logo_by_name", None)
-        if cached is None:
-            cached = GetLogoByNameEntity(self, None)
-            self._get_logo_by_name = cached
-        return cached
-
-    def GetLogoByName(self, data=None):
-        # Deprecated: use client.get_logo_by_name instead.
+    def GetLogoByName(self, data=None) -> "GetLogoByNameEntity":
+        """Entity factory: client.GetLogoByName().list({}) / client.GetLogoByName().load({"id": ...})."""
         from entity.get_logo_by_name_entity import GetLogoByNameEntity
         return GetLogoByNameEntity(self, data)
 
 
-    @property
-    def logo(self):
-        """Idiomatic facade: client.logo.list() / client.logo.load({"id": ...})."""
-        from entity.logo_entity import LogoEntity
-        cached = getattr(self, "_logo", None)
-        if cached is None:
-            cached = LogoEntity(self, None)
-            self._logo = cached
-        return cached
-
-    def Logo(self, data=None):
-        # Deprecated: use client.logo instead.
+    def Logo(self, data=None) -> "LogoEntity":
+        """Entity factory: client.Logo().list({}) / client.Logo().load({"id": ...})."""
         from entity.logo_entity import LogoEntity
         return LogoEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "LogotypesSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -306,3 +266,12 @@ class LogotypesSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.all_entity import AllEntity
+    from entity.data_entity import DataEntity
+    from entity.get_logo_by_name_entity import GetLogoByNameEntity
+    from entity.logo_entity import LogoEntity

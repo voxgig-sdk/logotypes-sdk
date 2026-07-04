@@ -97,7 +97,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## AllEntity
 
 ```php
-$all = $client->all();
+$all = $client->All();
 ```
 
 ### Fields
@@ -116,7 +116,7 @@ $all = $client->all();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->all()->list([]);
+$results = $client->All()->list([]);
 ```
 
 ### Common Methods
@@ -152,7 +152,7 @@ Return the entity name.
 ## DataEntity
 
 ```php
-$data = $client->data();
+$data = $client->Data();
 ```
 
 ### Fields
@@ -171,7 +171,7 @@ $data = $client->data();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->data()->list([]);
+$results = $client->Data()->list([]);
 ```
 
 ### Common Methods
@@ -207,7 +207,7 @@ Return the entity name.
 ## GetLogoByNameEntity
 
 ```php
-$get_logo_by_name = $client->get_logo_by_name();
+$get_logo_by_name = $client->GetLogoByName();
 ```
 
 ### Operations
@@ -217,7 +217,7 @@ $get_logo_by_name = $client->get_logo_by_name();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->get_logo_by_name()->load(["id" => "get_logo_by_name_id"]);
+$result = $client->GetLogoByName()->load(["id" => "get_logo_by_name_id"]);
 ```
 
 ### Common Methods
@@ -253,7 +253,7 @@ Return the entity name.
 ## LogoEntity
 
 ```php
-$logo = $client->logo();
+$logo = $client->Logo();
 ```
 
 ### Operations
@@ -263,7 +263,7 @@ $logo = $client->logo();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->logo()->load(["id" => "logo_id"]);
+$result = $client->Logo()->load(["id" => "logo_id"]);
 ```
 
 ### Common Methods

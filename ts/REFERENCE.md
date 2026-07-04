@@ -145,7 +145,7 @@ Alias for `LogotypesSDK.test()`.
 ## AllEntity
 
 ```ts
-const all = client.all
+const all = client.All()
 ```
 
 ### Fields
@@ -164,7 +164,7 @@ const all = client.all
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.all.list()
+const results = await client.All().list()
 ```
 
 ### Common Methods
@@ -198,7 +198,7 @@ Return a copy of the entity options.
 ## DataEntity
 
 ```ts
-const data = client.data
+const data = client.Data()
 ```
 
 ### Fields
@@ -217,7 +217,7 @@ const data = client.data
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.data.list()
+const results = await client.Data().list()
 ```
 
 ### Common Methods
@@ -251,7 +251,7 @@ Return a copy of the entity options.
 ## GetLogoByNameEntity
 
 ```ts
-const get_logo_by_name = client.get_logo_by_name
+const get_logo_by_name = client.GetLogoByName()
 ```
 
 ### Operations
@@ -261,7 +261,7 @@ const get_logo_by_name = client.get_logo_by_name
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.get_logo_by_name.load({ id: 'get_logo_by_name_id' })
+const result = await client.GetLogoByName().load({ id: 'get_logo_by_name_id' })
 ```
 
 ### Common Methods
@@ -295,7 +295,7 @@ Return a copy of the entity options.
 ## LogoEntity
 
 ```ts
-const logo = client.logo
+const logo = client.Logo()
 ```
 
 ### Operations
@@ -305,7 +305,7 @@ const logo = client.logo
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.logo.load({ id: 'logo_id' })
+const result = await client.Logo().load({ id: 'logo_id' })
 ```
 
 ### Common Methods

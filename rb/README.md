@@ -28,16 +28,14 @@ require_relative "Logotypes_sdk"
 client = LogotypesSDK.new
 ```
 
-### 2. List alls
+### 2. List all records
 
 ```ruby
 begin
-  result = client.all.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of All records — iterate directly.
+  alls = client.All.list
+  alls.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = LogotypesSDK.test
+client = LogotypesSDK.test({
+  "entity" => { "all" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.all.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+all = client.All.load({ "id" => "test01" })
+puts all
 ```
 
 ### Use a custom fetch function
@@ -167,7 +169,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `All` | `(data) -> AllEntity` | Create a All entity instance. |
+| `All` | `(data) -> AllEntity` | Create an All entity instance. |
 | `Data` | `(data) -> DataEntity` | Create a Data entity instance. |
 | `GetLogoByName` | `(data) -> GetLogoByNameEntity` | Create a GetLogoByName entity instance. |
 | `Logo` | `(data) -> LogoEntity` | Create a Logo entity instance. |
@@ -260,7 +262,7 @@ API path: `/random`
 
 ### All
 
-Create an instance: `const all = client.all`
+Create an instance: `all = client.All`
 
 #### Operations
 
@@ -279,14 +281,15 @@ Create an instance: `const all = client.all`
 
 #### Example: List
 
-```ts
-const alls = await client.all.list()
+```ruby
+# list returns an Array of All records (raises on error).
+alls = client.All.list
 ```
 
 
 ### Data
 
-Create an instance: `const data = client.data`
+Create an instance: `data = client.Data`
 
 #### Operations
 
@@ -305,14 +308,15 @@ Create an instance: `const data = client.data`
 
 #### Example: List
 
-```ts
-const datas = await client.data.list()
+```ruby
+# list returns an Array of Data records (raises on error).
+datas = client.Data.list
 ```
 
 
 ### GetLogoByName
 
-Create an instance: `const get_logo_by_name = client.get_logo_by_name`
+Create an instance: `get_logo_by_name = client.GetLogoByName`
 
 #### Operations
 
@@ -322,14 +326,15 @@ Create an instance: `const get_logo_by_name = client.get_logo_by_name`
 
 #### Example: Load
 
-```ts
-const get_logo_by_name = await client.get_logo_by_name.load({ id: 'get_logo_by_name_id' })
+```ruby
+# load returns the bare GetLogoByName record (raises on error).
+get_logo_by_name = client.GetLogoByName.load({ "id" => "get_logo_by_name_id" })
 ```
 
 
 ### Logo
 
-Create an instance: `const logo = client.logo`
+Create an instance: `logo = client.Logo`
 
 #### Operations
 
@@ -339,8 +344,9 @@ Create an instance: `const logo = client.logo`
 
 #### Example: Load
 
-```ts
-const logo = await client.logo.load({ id: 'logo_id' })
+```ruby
+# load returns the bare Logo record (raises on error).
+logo = client.Logo.load({ "id" => "logo_id" })
 ```
 
 
@@ -415,7 +421,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-all = client.all
+all = client.All
 all.load({ "id" => "example_id" })
 
 # all.data_get now returns the loaded all data

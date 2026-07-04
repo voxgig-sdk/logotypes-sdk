@@ -95,7 +95,7 @@ same parameters as `direct()`.
 ## AllEntity
 
 ```lua
-local all = client:all(nil)
+local all = client:All(nil)
 ```
 
 ### Fields
@@ -114,7 +114,7 @@ local all = client:all(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:all():list()
+local results, err = client:All():list()
 ```
 
 ### Common Methods
@@ -150,7 +150,7 @@ Return the entity name.
 ## DataEntity
 
 ```lua
-local data = client:data(nil)
+local data = client:Data(nil)
 ```
 
 ### Fields
@@ -169,7 +169,7 @@ local data = client:data(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:data():list()
+local results, err = client:Data():list()
 ```
 
 ### Common Methods
@@ -205,7 +205,7 @@ Return the entity name.
 ## GetLogoByNameEntity
 
 ```lua
-local get_logo_by_name = client:get_logo_by_name(nil)
+local get_logo_by_name = client:GetLogoByName(nil)
 ```
 
 ### Operations
@@ -215,7 +215,7 @@ local get_logo_by_name = client:get_logo_by_name(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:get_logo_by_name():load({ id = "get_logo_by_name_id" })
+local result, err = client:GetLogoByName():load({ id = "get_logo_by_name_id" })
 ```
 
 ### Common Methods
@@ -251,7 +251,7 @@ Return the entity name.
 ## LogoEntity
 
 ```lua
-local logo = client:logo(nil)
+local logo = client:Logo(nil)
 ```
 
 ### Operations
@@ -261,7 +261,7 @@ local logo = client:logo(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:logo():load({ id = "logo_id" })
+local result, err = client:Logo():load({ id = "logo_id" })
 ```
 
 ### Common Methods
