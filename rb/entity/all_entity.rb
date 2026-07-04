@@ -45,6 +45,7 @@ class AllEntity
     end
   end
 
+  # @return [All, Hash] the current All data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class AllEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of All fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class AllEntity
   
 
   
+  # List All items matching the given filter.
+  #
+  # @param reqmatch [AllListMatch, Hash, nil] match filter (any subset of All fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<All>, Array] the matching All items; raises LogotypesError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

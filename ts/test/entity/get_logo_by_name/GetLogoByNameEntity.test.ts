@@ -111,7 +111,6 @@ function basicSetup(extra?: any) {
     'LOGOTYPES_TEST_GET_LOGO_BY_NAME_ENTID': idmap,
     'LOGOTYPES_TEST_LIVE': 'FALSE',
     'LOGOTYPES_TEST_EXPLAIN': 'FALSE',
-    'LOGOTYPES_APIKEY': 'NONE',
   })
 
   idmap = env['LOGOTYPES_TEST_GET_LOGO_BY_NAME_ENTID']
@@ -121,7 +120,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new LogotypesSDK(merge([
       {
-        apikey: env.LOGOTYPES_APIKEY,
       },
       extra
     ]))

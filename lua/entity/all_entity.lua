@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch AllListMatch
+---@param ctrl? table
+---@return All[]
+---@return string? err
 function AllEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

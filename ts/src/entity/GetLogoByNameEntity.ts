@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetLogoByName,
+  GetLogoByNameLoadMatch,
+} from '../LogotypesTypes'
 
 // TODO: needs Entity superclass
-class GetLogoByNameEntity extends LogotypesEntityBase {
+class GetLogoByNameEntity extends LogotypesEntityBase<GetLogoByName> {
 
   constructor(client: LogotypesSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class GetLogoByNameEntity extends LogotypesEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: GetLogoByNameLoadMatch, ctrl?: Control): Promise<GetLogoByName> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class GetLogoByNameEntity extends LogotypesEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetLogoByName> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

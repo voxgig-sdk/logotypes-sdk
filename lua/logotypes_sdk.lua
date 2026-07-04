@@ -244,24 +244,76 @@ end
 
 
 
+-- Idiomatic facade: client:all():list() / client:all():load({ id = ... })
+function LogotypesSDK:all(data)
+  local EntityMod = require("entity.all_entity")
+  if data == nil then
+    if self._all == nil then
+      self._all = EntityMod.new(self, nil)
+    end
+    return self._all
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:all() instead.
 function LogotypesSDK:All(data)
   local EntityMod = require("entity.all_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:data():list() / client:data():load({ id = ... })
+function LogotypesSDK:data(data)
+  local EntityMod = require("entity.data_entity")
+  if data == nil then
+    if self._data == nil then
+      self._data = EntityMod.new(self, nil)
+    end
+    return self._data
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:data() instead.
 function LogotypesSDK:Data(data)
   local EntityMod = require("entity.data_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:get_logo_by_name():list() / client:get_logo_by_name():load({ id = ... })
+function LogotypesSDK:get_logo_by_name(data)
+  local EntityMod = require("entity.get_logo_by_name_entity")
+  if data == nil then
+    if self._get_logo_by_name == nil then
+      self._get_logo_by_name = EntityMod.new(self, nil)
+    end
+    return self._get_logo_by_name
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:get_logo_by_name() instead.
 function LogotypesSDK:GetLogoByName(data)
   local EntityMod = require("entity.get_logo_by_name_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:logo():list() / client:logo():load({ id = ... })
+function LogotypesSDK:logo(data)
+  local EntityMod = require("entity.logo_entity")
+  if data == nil then
+    if self._logo == nil then
+      self._logo = EntityMod.new(self, nil)
+    end
+    return self._logo
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:logo() instead.
 function LogotypesSDK:Logo(data)
   local EntityMod = require("entity.logo_entity")
   return EntityMod.new(self, data)

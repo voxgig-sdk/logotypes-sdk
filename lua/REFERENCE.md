@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -96,7 +95,7 @@ same parameters as `direct()`.
 ## AllEntity
 
 ```lua
-local all = client:All(nil)
+local all = client:all(nil)
 ```
 
 ### Fields
@@ -115,7 +114,7 @@ local all = client:All(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:All():list()
+local results, err = client:all():list()
 ```
 
 ### Common Methods
@@ -151,7 +150,7 @@ Return the entity name.
 ## DataEntity
 
 ```lua
-local data = client:Data(nil)
+local data = client:data(nil)
 ```
 
 ### Fields
@@ -170,7 +169,7 @@ local data = client:Data(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Data():list()
+local results, err = client:data():list()
 ```
 
 ### Common Methods
@@ -206,7 +205,7 @@ Return the entity name.
 ## GetLogoByNameEntity
 
 ```lua
-local get_logo_by_name = client:GetLogoByName(nil)
+local get_logo_by_name = client:get_logo_by_name(nil)
 ```
 
 ### Operations
@@ -216,7 +215,7 @@ local get_logo_by_name = client:GetLogoByName(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetLogoByName():load({ id = "get_logo_by_name_id" })
+local result, err = client:get_logo_by_name():load({ id = "get_logo_by_name_id" })
 ```
 
 ### Common Methods
@@ -252,7 +251,7 @@ Return the entity name.
 ## LogoEntity
 
 ```lua
-local logo = client:Logo(nil)
+local logo = client:logo(nil)
 ```
 
 ### Operations
@@ -262,7 +261,7 @@ local logo = client:Logo(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Logo():load({ id = "logo_id" })
+local result, err = client:logo():load({ id = "logo_id" })
 ```
 
 ### Common Methods

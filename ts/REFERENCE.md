@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -146,7 +145,7 @@ Alias for `LogotypesSDK.test()`.
 ## AllEntity
 
 ```ts
-const all = client.All()
+const all = client.all
 ```
 
 ### Fields
@@ -165,7 +164,7 @@ const all = client.All()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.All().list()
+const results = await client.all.list()
 ```
 
 ### Common Methods
@@ -199,7 +198,7 @@ Return a copy of the entity options.
 ## DataEntity
 
 ```ts
-const data = client.Data()
+const data = client.data
 ```
 
 ### Fields
@@ -218,7 +217,7 @@ const data = client.Data()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Data().list()
+const results = await client.data.list()
 ```
 
 ### Common Methods
@@ -252,7 +251,7 @@ Return a copy of the entity options.
 ## GetLogoByNameEntity
 
 ```ts
-const get_logo_by_name = client.GetLogoByName()
+const get_logo_by_name = client.get_logo_by_name
 ```
 
 ### Operations
@@ -262,7 +261,7 @@ const get_logo_by_name = client.GetLogoByName()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetLogoByName().load({ id: 'get_logo_by_name_id' })
+const result = await client.get_logo_by_name.load({ id: 'get_logo_by_name_id' })
 ```
 
 ### Common Methods
@@ -296,7 +295,7 @@ Return a copy of the entity options.
 ## LogoEntity
 
 ```ts
-const logo = client.Logo()
+const logo = client.logo
 ```
 
 ### Operations
@@ -306,7 +305,7 @@ const logo = client.Logo()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Logo().load({ id: 'logo_id' })
+const result = await client.logo.load({ id: 'logo_id' })
 ```
 
 ### Common Methods

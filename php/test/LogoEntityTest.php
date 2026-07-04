@@ -49,8 +49,7 @@ class LogoEntityTest extends TestCase
         // LOAD
         $logo_ref01_ent = $client->Logo(null);
         $logo_ref01_match_dt0 = [];
-        [$logo_ref01_data_dt0_loaded, $err] = $logo_ref01_ent->load($logo_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $logo_ref01_data_dt0_loaded = $logo_ref01_ent->load($logo_ref01_match_dt0, null);
         $this->assertNotNull($logo_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function logo_basic_setup($extra)
         "LOGOTYPES_TEST_LOGO_ENTID" => $idmap,
         "LOGOTYPES_TEST_LIVE" => "FALSE",
         "LOGOTYPES_TEST_EXPLAIN" => "FALSE",
-        "LOGOTYPES_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function logo_basic_setup($extra)
     if ($env["LOGOTYPES_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["LOGOTYPES_APIKEY"],
             ],
             $extra ?? [],
         ]);

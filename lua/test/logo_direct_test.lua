@@ -62,14 +62,12 @@ function logo_direct_setup(mockres)
   local env = runner.env_override({
     ["LOGOTYPES_TEST_LOGO_ENTID"] = {},
     ["LOGOTYPES_TEST_LIVE"] = "FALSE",
-    ["LOGOTYPES_APIKEY"] = "NONE",
   })
 
   local live = env["LOGOTYPES_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["LOGOTYPES_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

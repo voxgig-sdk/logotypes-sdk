@@ -49,8 +49,7 @@ class TestLogoEntity:
         # LOAD
         logo_ref01_ent = client.Logo(None)
         logo_ref01_match_dt0 = {}
-        logo_ref01_data_dt0_loaded, err = logo_ref01_ent.load(logo_ref01_match_dt0, None)
-        assert err is None
+        logo_ref01_data_dt0_loaded = logo_ref01_ent.load(logo_ref01_match_dt0, None)
         assert logo_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _logo_basic_setup(extra):
         "LOGOTYPES_TEST_LOGO_ENTID": idmap,
         "LOGOTYPES_TEST_LIVE": "FALSE",
         "LOGOTYPES_TEST_EXPLAIN": "FALSE",
-        "LOGOTYPES_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _logo_basic_setup(extra):
     if env.get("LOGOTYPES_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("LOGOTYPES_APIKEY"),
             },
             extra or {},
         ])

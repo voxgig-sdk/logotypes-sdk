@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch LogoLoadMatch
+---@param ctrl? table
+---@return Logo
+---@return string? err
 function LogoEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

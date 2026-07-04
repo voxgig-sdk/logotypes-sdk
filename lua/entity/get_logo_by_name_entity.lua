@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch GetLogoByNameLoadMatch
+---@param ctrl? table
+---@return GetLogoByName
+---@return string? err
 function GetLogoByNameEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

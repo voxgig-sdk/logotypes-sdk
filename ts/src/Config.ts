@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://www.logotypes.dev',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -213,7 +209,8 @@ class Config {
                     "name": "logo_name",
                     "orig": "logo_name",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -266,7 +263,8 @@ class Config {
                     "name": "id",
                     "orig": "logo_name",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [

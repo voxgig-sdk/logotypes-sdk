@@ -117,7 +117,6 @@ func get_logo_by_nameBasicSetup(extra map[string]any) *entityTestSetup {
 		"LOGOTYPES_TEST_GET_LOGO_BY_NAME_ENTID": idmap,
 		"LOGOTYPES_TEST_LIVE":      "FALSE",
 		"LOGOTYPES_TEST_EXPLAIN":   "FALSE",
-		"LOGOTYPES_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["LOGOTYPES_TEST_GET_LOGO_BY_NAME_ENTID"])
@@ -128,7 +127,6 @@ func get_logo_by_nameBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["LOGOTYPES_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["LOGOTYPES_APIKEY"],
 			},
 			extra,
 		})

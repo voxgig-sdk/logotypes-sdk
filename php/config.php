@@ -20,9 +20,6 @@ class LogotypesConfig
             ],
             "options" => [
                 "base" => "https://www.logotypes.dev",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -183,6 +180,7 @@ class LogotypesConfig
                         'orig' => 'logo_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -236,6 +234,7 @@ class LogotypesConfig
                         'orig' => 'logo_name',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [

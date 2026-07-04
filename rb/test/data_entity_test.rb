@@ -45,8 +45,7 @@ class DataEntityTest < Minitest::Test
       "logo_name" => setup[:idmap]["logo_name01"],
     }
 
-    data_ref01_list_result, err = data_ref01_ent.list(data_ref01_match, nil)
-    assert_nil err
+    data_ref01_list_result = data_ref01_ent.list(data_ref01_match, nil)
     assert data_ref01_list_result.is_a?(Array)
 
   end
@@ -85,7 +84,6 @@ def data_basic_setup(extra)
     "LOGOTYPES_TEST_DATA_ENTID" => idmap,
     "LOGOTYPES_TEST_LIVE" => "FALSE",
     "LOGOTYPES_TEST_EXPLAIN" => "FALSE",
-    "LOGOTYPES_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -97,7 +95,6 @@ def data_basic_setup(extra)
   if env["LOGOTYPES_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["LOGOTYPES_APIKEY"],
       },
       extra || {},
     ])

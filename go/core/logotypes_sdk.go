@@ -245,21 +245,33 @@ func (sdk *LogotypesSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// All returns a All entity bound to this client.
+// Idiomatic usage: client.All(nil).List(nil, nil) or
+// client.All(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *LogotypesSDK) All(data map[string]any) LogotypesEntity {
 	return NewAllEntityFunc(sdk, data)
 }
 
 
+// Data returns a Data entity bound to this client.
+// Idiomatic usage: client.Data(nil).List(nil, nil) or
+// client.Data(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *LogotypesSDK) Data(data map[string]any) LogotypesEntity {
 	return NewDataEntityFunc(sdk, data)
 }
 
 
+// GetLogoByName returns a GetLogoByName entity bound to this client.
+// Idiomatic usage: client.GetLogoByName(nil).List(nil, nil) or
+// client.GetLogoByName(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *LogotypesSDK) GetLogoByName(data map[string]any) LogotypesEntity {
 	return NewGetLogoByNameEntityFunc(sdk, data)
 }
 
 
+// Logo returns a Logo entity bound to this client.
+// Idiomatic usage: client.Logo(nil).List(nil, nil) or
+// client.Logo(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *LogotypesSDK) Logo(data map[string]any) LogotypesEntity {
 	return NewLogoEntityFunc(sdk, data)
 }

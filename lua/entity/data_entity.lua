@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch DataListMatch
+---@param ctrl? table
+---@return Data[]
+---@return string? err
 function DataEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

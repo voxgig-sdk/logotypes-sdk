@@ -94,7 +94,6 @@ function data_basic_setup(extra)
     ["LOGOTYPES_TEST_DATA_ENTID"] = idmap,
     ["LOGOTYPES_TEST_LIVE"] = "FALSE",
     ["LOGOTYPES_TEST_EXPLAIN"] = "FALSE",
-    ["LOGOTYPES_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -106,7 +105,6 @@ function data_basic_setup(extra)
   if env["LOGOTYPES_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["LOGOTYPES_APIKEY"],
       },
       extra or {},
     })

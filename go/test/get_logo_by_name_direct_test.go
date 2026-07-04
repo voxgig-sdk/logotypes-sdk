@@ -110,14 +110,12 @@ func get_logo_by_nameDirectSetup(mockres any) *get_logo_by_nameDirectSetupResult
 	env := envOverride(map[string]any{
 		"LOGOTYPES_TEST_GET_LOGO_BY_NAME_ENTID": map[string]any{},
 		"LOGOTYPES_TEST_LIVE":    "FALSE",
-		"LOGOTYPES_APIKEY":       "NONE",
 	})
 
 	live := env["LOGOTYPES_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["LOGOTYPES_APIKEY"],
 		}
 		client := sdk.NewLogotypesSDK(mergedOpts)
 
