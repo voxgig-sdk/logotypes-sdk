@@ -16,8 +16,7 @@ type All struct {
 	Version *[]any `json:"version,omitempty"`
 }
 
-// AllListMatch mirrors the all fields as an all-optional match
-// filter (Go analog of Partial<All>).
+// AllListMatch is the typed request payload for All.ListTyped.
 type AllListMatch struct {
 	Name *string `json:"name,omitempty"`
 	Url *string `json:"url,omitempty"`
@@ -51,8 +50,7 @@ type GetLogoByNameLoadMatch struct {
 type Logo struct {
 }
 
-// LogoLoadMatch mirrors the logo fields as an all-optional match
-// filter (Go analog of Partial<Logo>).
+// LogoLoadMatch is the typed request payload for Logo.LoadTyped.
 type LogoLoadMatch struct {
 }
 

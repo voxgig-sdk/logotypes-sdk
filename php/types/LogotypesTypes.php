@@ -21,7 +21,7 @@ class All
     public ?array $version = null;
 }
 
-/** Match filter for All#list (any subset of All fields). */
+/** Request payload for All#list. */
 class AllListMatch
 {
     public ?string $name = null;
@@ -61,7 +61,7 @@ class Logo
 {
 }
 
-/** Match filter for Logo#load (any subset of Logo fields). */
+/** Request payload for Logo#load. */
 class LogoLoadMatch
 {
 }

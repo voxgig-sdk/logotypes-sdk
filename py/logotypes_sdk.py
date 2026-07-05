@@ -221,25 +221,25 @@ class LogotypesSDK:
 
 
     def All(self, data=None) -> "AllEntity":
-        """Entity factory: client.All().list({}) / client.All().load({"id": ...})."""
+        """Entity factory: client.All().list() / client.All().load({"id": ...})."""
         from entity.all_entity import AllEntity
         return AllEntity(self, data)
 
 
     def Data(self, data=None) -> "DataEntity":
-        """Entity factory: client.Data().list({}) / client.Data().load({"id": ...})."""
+        """Entity factory: client.Data().list() / client.Data().load({"id": ...})."""
         from entity.data_entity import DataEntity
         return DataEntity(self, data)
 
 
     def GetLogoByName(self, data=None) -> "GetLogoByNameEntity":
-        """Entity factory: client.GetLogoByName().list({}) / client.GetLogoByName().load({"id": ...})."""
+        """Entity factory: client.GetLogoByName().list() / client.GetLogoByName().load({"id": ...})."""
         from entity.get_logo_by_name_entity import GetLogoByNameEntity
         return GetLogoByNameEntity(self, data)
 
 
     def Logo(self, data=None) -> "LogoEntity":
-        """Entity factory: client.Logo().list({}) / client.Logo().load({"id": ...})."""
+        """Entity factory: client.Logo().list() / client.Logo().load({"id": ...})."""
         from entity.logo_entity import LogoEntity
         return LogoEntity(self, data)
 

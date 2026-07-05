@@ -29,7 +29,7 @@ All = Struct.new(
   keyword_init: true
 )
 
-# Match filter for All#list (any subset of All fields).
+# Request payload for All#list.
 #
 # @!attribute [rw] name
 #   @return [String, nil]
@@ -97,7 +97,7 @@ GetLogoByNameLoadMatch = Struct.new(
 class Logo
 end
 
-# Match filter for Logo#load (any subset of Logo fields).
+# Request payload for Logo#load.
 class LogoLoadMatch
 end
 

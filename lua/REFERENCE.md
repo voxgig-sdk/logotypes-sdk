@@ -102,10 +102,10 @@ local all = client:All(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
+| `variant` | `table` | No |  |
+| `version` | `table` | No |  |
 
 ### Operations
 
@@ -157,10 +157,10 @@ local data = client:Data(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
+| `variant` | `table` | No |  |
+| `version` | `table` | No |  |
 
 ### Operations
 
@@ -261,7 +261,7 @@ local logo = client:Logo(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Logo():load({ id = "logo_id" })
+local result, err = client:Logo():load()
 ```
 
 ### Common Methods

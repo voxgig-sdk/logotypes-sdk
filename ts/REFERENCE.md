@@ -152,10 +152,10 @@ const all = client.All()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
+| `variant` | `any[]` | No |  |
+| `version` | `any[]` | No |  |
 
 ### Operations
 
@@ -205,10 +205,10 @@ const data = client.Data()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
+| `variant` | `any[]` | No |  |
+| `version` | `any[]` | No |  |
 
 ### Operations
 
@@ -305,7 +305,7 @@ const logo = client.Logo()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Logo().load({ id: 'logo_id' })
+const result = await client.Logo().load()
 ```
 
 ### Common Methods

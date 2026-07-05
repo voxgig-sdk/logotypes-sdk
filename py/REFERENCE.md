@@ -99,19 +99,19 @@ all = client.All()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `str` | No |  |
+| `url` | `str` | No |  |
+| `variant` | `list` | No |  |
+| `version` | `list` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.All().list({})
+results = client.All().list()
 for all in results:
     print(all)
 ```
@@ -155,19 +155,19 @@ data = client.Data()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `str` | No |  |
+| `url` | `str` | No |  |
+| `variant` | `list` | No |  |
+| `version` | `list` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Data().list({})
+results = client.Data().list()
 for data in results:
     print(data)
 ```
@@ -259,7 +259,7 @@ logo = client.Logo()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Logo().load({"id": "logo_id"})
+result = client.Logo().load()
 ```
 
 ### Common Methods

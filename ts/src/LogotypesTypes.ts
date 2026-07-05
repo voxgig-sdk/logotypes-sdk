@@ -12,7 +12,12 @@ export interface All {
   version?: any[]
 }
 
-export type AllListMatch = Partial<All>
+export interface AllListMatch {
+  name?: string
+  url?: string
+  variant?: any[]
+  version?: any[]
+}
 
 export interface Data {
   name?: string
@@ -35,5 +40,6 @@ export interface GetLogoByNameLoadMatch {
 export interface Logo {
 }
 
-export type LogoLoadMatch = Partial<Logo>
+export interface LogoLoadMatch {
+}
 

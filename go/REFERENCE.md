@@ -109,10 +109,10 @@ all := client.All(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
+| `variant` | `[]any` | No |  |
+| `version` | `[]any` | No |  |
 
 ### Operations
 
@@ -158,10 +158,10 @@ data := client.Data(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
+| `variant` | `[]any` | No |  |
+| `version` | `[]any` | No |  |
 
 ### Operations
 
@@ -250,7 +250,7 @@ logo := client.Logo(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Logo(nil).Load(map[string]any{"id": "logo_id"}, nil)
+result, err := client.Logo(nil).Load(nil, nil)
 ```
 
 ### Common Methods

@@ -13,6 +13,10 @@
 ---@field version? table
 
 ---@class AllListMatch
+---@field name? string
+---@field url? string
+---@field variant? table
+---@field version? table
 
 ---@class Data
 ---@field name? string

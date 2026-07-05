@@ -8,7 +8,7 @@ Complete API reference for the Logotypes Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'logotypes_sdk'
+require_relative 'Logotypes_sdk'
 
 client = LogotypesSDK.new(options)
 ```
@@ -105,19 +105,19 @@ all = client.All
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `String` | No |  |
+| `url` | `String` | No |  |
+| `variant` | `Array` | No |  |
+| `version` | `Array` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.All.list(nil)
+results = client.All.list
 ```
 
 ### Common Methods
@@ -160,19 +160,19 @@ data = client.Data
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `variant` | ``$ARRAY`` | No |  |
-| `version` | ``$ARRAY`` | No |  |
+| `name` | `String` | No |  |
+| `url` | `String` | No |  |
+| `variant` | `Array` | No |  |
+| `version` | `Array` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Data.list(nil)
+results = client.Data.list
 ```
 
 ### Common Methods
@@ -264,7 +264,7 @@ logo = client.Logo
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Logo.load({ "id" => "logo_id" })
+result = client.Logo.load()
 ```
 
 ### Common Methods
