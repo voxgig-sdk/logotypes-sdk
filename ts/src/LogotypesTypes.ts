@@ -27,7 +27,7 @@ export interface Data {
 }
 
 export interface DataListMatch {
-  logo_name: string
+  logo_name?: string
 }
 
 export interface GetLogoByName {

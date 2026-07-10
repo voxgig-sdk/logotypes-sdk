@@ -74,7 +74,7 @@ Data = Struct.new(
 # Request payload for Data#list.
 #
 # @!attribute [rw] logo_name
-#   @return [String]
+#   @return [String, nil]
 DataListMatch = Struct.new(
   :logo_name,
   keyword_init: true

@@ -19,9 +19,9 @@ main: {
           url: "https://www.logotypes.dev"
         }
       ]
+      summary: "An open-source API that provides a vast collection of logos for various projects."
       title: "Logotypes API"
       version: "1.0.0"
+      website: "https://logotypes.dev"
     }
   }
-}
-

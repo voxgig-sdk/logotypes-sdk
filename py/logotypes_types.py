@@ -37,7 +37,7 @@ class Data(TypedDict, total=False):
     version: list
 
 
-class DataListMatch(TypedDict):
+class DataListMatch(TypedDict, total=False):
     logo_name: str
 
 

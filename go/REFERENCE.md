@@ -103,6 +103,7 @@ same parameters as `Direct()`.
 
 ```go
 all := client.All(nil)
+fmt.Println(all.GetName()) // "all"
 ```
 
 ### Fields
@@ -122,6 +123,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.All(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -152,6 +157,7 @@ Return the entity name.
 
 ```go
 data := client.Data(nil)
+fmt.Println(data.GetName()) // "data"
 ```
 
 ### Fields
@@ -171,6 +177,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Data(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -200,7 +210,8 @@ Return the entity name.
 ## GetLogoByNameEntity
 
 ```go
-get_logo_by_name := client.GetLogoByName(nil)
+getLogoByName := client.GetLogoByName(nil)
+fmt.Println(getLogoByName.GetName()) // "get_logo_by_name"
 ```
 
 ### Operations
@@ -211,6 +222,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GetLogoByName(nil).Load(map[string]any{"id": "get_logo_by_name_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -241,6 +256,7 @@ Return the entity name.
 
 ```go
 logo := client.Logo(nil)
+fmt.Println(logo.GetName()) // "logo"
 ```
 
 ### Operations
@@ -251,6 +267,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Logo(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

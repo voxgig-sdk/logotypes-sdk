@@ -34,7 +34,7 @@ type Data struct {
 
 // DataListMatch is the typed request payload for Data.ListTyped.
 type DataListMatch struct {
-	LogoName string `json:"logo_name"`
+	LogoName *string `json:"logo_name,omitempty"`
 }
 
 // GetLogoByName is the typed data model for the get_logo_by_name entity.

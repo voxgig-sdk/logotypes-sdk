@@ -372,7 +372,7 @@ fmt.Println(datas) // the array of records
 
 ### GetLogoByName
 
-Create an instance: `get_logo_by_name := client.GetLogoByName(nil)`
+Create an instance: `getLogoByName := client.GetLogoByName(nil)`
 
 #### Operations
 
@@ -383,11 +383,11 @@ Create an instance: `get_logo_by_name := client.GetLogoByName(nil)`
 #### Example: Load
 
 ```go
-get_logo_by_name, err := client.GetLogoByName(nil).Load(map[string]any{"id": "get_logo_by_name_id"}, nil)
+getLogoByName, err := client.GetLogoByName(nil).Load(map[string]any{"id": "get_logo_by_name_id"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(get_logo_by_name) // the loaded record
+fmt.Println(getLogoByName) // the loaded record
 ```
 
 

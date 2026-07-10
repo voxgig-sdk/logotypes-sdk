@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -552,14 +549,17 @@
         "license": {
           "name": "Open Source"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://www.logotypes.dev"
           }
         ],
+        "summary": "An open-source API that provides a vast collection of logos for various projects.",
         "title": "Logotypes API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://logotypes.dev"
       },
       "option": {},
       "target": {
@@ -612,6 +612,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -662,6 +665,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
