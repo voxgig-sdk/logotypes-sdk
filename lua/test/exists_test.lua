@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Logotypes SDK exists test
 
 local sdk = require("logotypes_sdk")
 
