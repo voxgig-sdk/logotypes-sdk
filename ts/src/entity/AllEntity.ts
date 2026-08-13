@@ -37,7 +37,7 @@ class AllEntity extends LogotypesEntityBase<All> {
 
 
 
-  async list(this: any, reqmatch?: AllListMatch, ctrl?: Control): Promise<All[]> {
+  async list(this: any, reqmatch?: AllListMatch, ctrl?: Control): Promise<AllEntity[]> {
 
     const utility = this._utility
 

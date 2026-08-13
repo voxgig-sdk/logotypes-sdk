@@ -53,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $alls = $client->All()->list();
+    $datas = $client->Data()->list();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,9 +125,10 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = LogotypesSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$all = $client->All()->list();
-print_r($all);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$data = $client->Data()->list();
+print_r($data);
 ```
 
 ### Use a custom fetch function
@@ -228,7 +229,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -252,8 +253,8 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -265,8 +266,8 @@ API path: `/all`
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -311,8 +312,8 @@ Create an instance: `$all = $client->All();`
 | --- | --- | --- |
 | `name` | `string` |  |
 | `url` | `string` |  |
-| `variant` | `array` |  |
-| `version` | `array` |  |
+| `variants` | `array` |  |
+| `versions` | `array` |  |
 
 #### Example: List
 
@@ -338,8 +339,8 @@ Create an instance: `$data = $client->Data();`
 | --- | --- | --- |
 | `name` | `string` |  |
 | `url` | `string` |  |
-| `variant` | `array` |  |
-| `version` | `array` |  |
+| `variants` | `array` |  |
+| `versions` | `array` |  |
 
 #### Example: List
 
@@ -362,7 +363,7 @@ Create an instance: `$get_logo_by_name = $client->GetLogoByName();`
 #### Example: Load
 
 ```php
-// load() returns the bare GetLogoByName record (throws on error).
+// load() returns the ENTITY — call data_get() for the GetLogoByName record (throws on error).
 $get_logo_by_name = $client->GetLogoByName()->load(["id" => "get_logo_by_name_id"]);
 ```
 
@@ -380,7 +381,7 @@ Create an instance: `$logo = $client->Logo();`
 #### Example: Load
 
 ```php
-// load() returns the bare Logo record (throws on error).
+// load() returns the ENTITY — call data_get() for the Logo record (throws on error).
 $logo = $client->Logo()->load();
 ```
 
@@ -461,11 +462,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$all = $client->All();
-$all->list();
+$data = $client->Data();
+$data->list();
 
-// $all->data_get() now returns the all data from the last list
-// $all->match_get() returns the last match criteria
+// $data->data_get() now returns the data data from the last list
+// $data->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

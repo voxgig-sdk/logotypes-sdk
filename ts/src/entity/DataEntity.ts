@@ -37,7 +37,7 @@ class DataEntity extends LogotypesEntityBase<Data> {
 
 
 
-  async list(this: any, reqmatch?: DataListMatch, ctrl?: Control): Promise<Data[]> {
+  async list(this: any, reqmatch?: DataListMatch, ctrl?: Control): Promise<DataEntity[]> {
 
     const utility = this._utility
 

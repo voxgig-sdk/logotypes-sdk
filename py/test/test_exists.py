@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Logotypes SDK exists test
 
 import pytest
 from logotypes_sdk import LogotypesSDK

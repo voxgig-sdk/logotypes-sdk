@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import LogotypesControl
-from core.error import LogotypesError
-from core.result import LogotypesResult
-from core.spec import LogotypesSpec
+from logotypes_sdk.config import make_config
+from logotypes_sdk.features import _make_feature
+from logotypes_sdk.core.control import LogotypesControl
+from logotypes_sdk.core.error import LogotypesError
+from logotypes_sdk.core.result import LogotypesResult
+from logotypes_sdk.core.spec import LogotypesSpec
 
 
 # True when this SDK was generated with the named feature.

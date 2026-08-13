@@ -107,8 +107,8 @@ all = client.All
 | --- | --- | --- | --- |
 | `name` | `String` | No |  |
 | `url` | `String` | No |  |
-| `variant` | `Array` | No |  |
-| `version` | `Array` | No |  |
+| `variants` | `Array` | No |  |
+| `versions` | `Array` | No |  |
 
 ### Operations
 
@@ -162,8 +162,8 @@ data = client.Data
 | --- | --- | --- | --- |
 | `name` | `String` | No |  |
 | `url` | `String` | No |  |
-| `variant` | `Array` | No |  |
-| `version` | `Array` | No |  |
+| `variants` | `Array` | No |  |
+| `versions` | `Array` | No |  |
 
 ### Operations
 

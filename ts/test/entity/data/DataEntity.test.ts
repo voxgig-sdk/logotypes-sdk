@@ -64,7 +64,7 @@ describe('DataEntity', async () => {
     const data_ref01_match: any = {}
     data_ref01_match['logo_name'] = setup.idmap['logo_name01']
 
-    const data_ref01_list = await data_ref01_ent.list(data_ref01_match)
+    const data_ref01_list = (await data_ref01_ent.list(data_ref01_match)).map((e: any) => e.data())
 
 
   })

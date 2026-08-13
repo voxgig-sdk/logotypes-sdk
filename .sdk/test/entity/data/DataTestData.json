@@ -4,22 +4,22 @@
       "DATA00": {
         "name": "s28",
         "url": "s29",
-        "variant": [],
-        "version": [],
+        "variants": [],
+        "versions": [],
         "logo_name": "LOGO_NAME01"
       },
       "DATA01": {
         "name": "s50",
         "url": "s51",
-        "variant": [],
-        "version": [],
+        "variants": [],
+        "versions": [],
         "logo_name": "LOGO_NAME01"
       },
       "DATA02": {
         "name": "s78",
         "url": "s79",
-        "variant": [],
-        "version": [],
+        "variants": [],
+        "versions": [],
         "logo_name": "LOGO_NAME01"
       }
     }
@@ -29,8 +29,8 @@
       "data_ref01": {
         "name": "sa0",
         "url": "sa1",
-        "variant": [],
-        "version": []
+        "variants": [],
+        "versions": []
       }
     }
   }

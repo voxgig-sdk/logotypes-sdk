@@ -16,11 +16,11 @@
 import pytest
 
 from logotypes_sdk import LogotypesSDK
-from core.error import LogotypesError
-from core.result import LogotypesResult
-from core.response import LogotypesResponse
-from core.spec import LogotypesSpec
-from feature.base_feature import LogotypesBaseFeature
+from logotypes_sdk.core.error import LogotypesError
+from logotypes_sdk.core.result import LogotypesResult
+from logotypes_sdk.core.response import LogotypesResponse
+from logotypes_sdk.core.spec import LogotypesSpec
+from logotypes_sdk.feature.base_feature import LogotypesBaseFeature
 
 
 def _client():

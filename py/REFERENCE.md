@@ -101,8 +101,8 @@ all = client.All()
 | --- | --- | --- | --- |
 | `name` | `str` | No |  |
 | `url` | `str` | No |  |
-| `variant` | `list` | No |  |
-| `version` | `list` | No |  |
+| `variants` | `list` | No |  |
+| `versions` | `list` | No |  |
 
 ### Operations
 
@@ -157,8 +157,8 @@ data = client.Data()
 | --- | --- | --- | --- |
 | `name` | `str` | No |  |
 | `url` | `str` | No |  |
-| `variant` | `list` | No |  |
-| `version` | `list` | No |  |
+| `variants` | `list` | No |  |
+| `versions` | `list` | No |  |
 
 ### Operations
 

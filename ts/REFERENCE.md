@@ -154,8 +154,8 @@ const all = client.All()
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `any[]` | No |  |
-| `version` | `any[]` | No |  |
+| `variants` | `any[]` | No |  |
+| `versions` | `any[]` | No |  |
 
 ### Operations
 
@@ -207,8 +207,8 @@ const data = client.Data()
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `any[]` | No |  |
-| `version` | `any[]` | No |  |
+| `variants` | `any[]` | No |  |
+| `versions` | `any[]` | No |  |
 
 ### Operations
 

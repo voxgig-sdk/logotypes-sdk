@@ -106,8 +106,8 @@ $all = $client->All();
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `array` | No |  |
-| `version` | `array` | No |  |
+| `variants` | `array` | No |  |
+| `versions` | `array` | No |  |
 
 ### Operations
 
@@ -161,8 +161,8 @@ $data = $client->Data();
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `array` | No |  |
-| `version` | `array` | No |  |
+| `variants` | `array` | No |  |
+| `versions` | `array` | No |  |
 
 ### Operations
 

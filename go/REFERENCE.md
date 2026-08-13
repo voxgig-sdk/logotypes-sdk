@@ -112,8 +112,8 @@ fmt.Println(all.GetName()) // "all"
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `[]any` | No |  |
-| `version` | `[]any` | No |  |
+| `variants` | `[]any` | No |  |
+| `versions` | `[]any` | No |  |
 
 ### Operations
 
@@ -166,8 +166,8 @@ fmt.Println(data.GetName()) // "data"
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `[]any` | No |  |
-| `version` | `[]any` | No |  |
+| `variants` | `[]any` | No |  |
+| `versions` | `[]any` | No |  |
 
 ### Operations
 

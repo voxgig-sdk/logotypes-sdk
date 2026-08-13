@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = LogotypesSDK.test()
-const alls = await client.All().list()
-// alls is an array of bare All records populated with mock data
-console.log(alls)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = LogotypesSDK.test({
+  entity: {
+    data: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const datas = await client.Data().list()
+// datas is an array of Data entities, populated with mock data
+// — call datas[0].data() for the record itself
+console.log(datas)
 ```
 
 ### Python
 
 ```python
 client = LogotypesSDK.test()
-alls = client.All().list()
-print(alls)
+datas = client.Data().list()
+print(datas)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(alls)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = LogotypesSDK::test([
-    "entity" => ["all" => ["test01" => []]],
+    "entity" => ["data" => ["test01" => []]],
 ]);
-$alls = $client->All()->list();
+$datas = $client->Data()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.All(nil).List(
+result, err := client.Data(nil).List(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.All(nil).List(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = LogotypesSDK.test({
-  "entity" => { "all" => { "test01" => {} } },
+  "entity" => { "data" => { "test01" => {} } },
 })
-alls = client.All.list()
+datas = client.Data.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local results, err = client:All():list()
+local results, err = client:Data():list()
 ```
 
 ## Packages
@@ -110,7 +119,7 @@ import { LogotypesSDK } from '@voxgig-sdk/logotypes'
 
 const client = new LogotypesSDK()
 
-// List all alls (returns All[])
+// List all alls (returns AllEntity[] — .data() for the record)
 const alls = await client.All().list()
 for (const all of alls) {
   console.log(all)
@@ -346,6 +355,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://logotypes.dev/](https://logotypes.dev/)
 

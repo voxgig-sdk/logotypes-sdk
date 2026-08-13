@@ -44,14 +44,14 @@ module LogotypesConfig
             },
             {
               "active" => true,
-              "name" => "variant",
+              "name" => "variants",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 2,
             },
             {
               "active" => true,
-              "name" => "version",
+              "name" => "versions",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 3,
@@ -66,6 +66,7 @@ module LogotypesConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/all",
                   "parts" => [
@@ -104,14 +105,14 @@ module LogotypesConfig
             },
             {
               "active" => true,
-              "name" => "variant",
+              "name" => "variants",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 2,
             },
             {
               "active" => true,
-              "name" => "version",
+              "name" => "versions",
               "req" => false,
               "type" => "`$ARRAY`",
               "index$" => 3,
@@ -145,6 +146,7 @@ module LogotypesConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random/data",
                   "parts" => [
@@ -179,6 +181,7 @@ module LogotypesConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{logoName}/data",
                   "parts" => [
@@ -251,6 +254,7 @@ module LogotypesConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{logoName}",
                   "parts" => [
@@ -312,6 +316,7 @@ module LogotypesConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
                   "parts" => [

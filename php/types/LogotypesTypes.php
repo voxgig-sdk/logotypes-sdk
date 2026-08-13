@@ -17,8 +17,8 @@ class All
 {
     public ?string $name = null;
     public ?string $url = null;
-    public ?array $variant = null;
-    public ?array $version = null;
+    public ?array $variants = null;
+    public ?array $versions = null;
 }
 
 /** Request payload for All#list. */
@@ -26,8 +26,8 @@ class AllListMatch
 {
     public ?string $name = null;
     public ?string $url = null;
-    public ?array $variant = null;
-    public ?array $version = null;
+    public ?array $variants = null;
+    public ?array $versions = null;
 }
 
 /** Data entity data model. */
@@ -35,8 +35,8 @@ class Data
 {
     public ?string $name = null;
     public ?string $url = null;
-    public ?array $variant = null;
-    public ?array $version = null;
+    public ?array $variants = null;
+    public ?array $versions = null;
 }
 
 /** Request payload for Data#list. */

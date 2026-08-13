@@ -8,22 +8,22 @@
 export interface All {
   name?: string
   url?: string
-  variant?: any[]
-  version?: any[]
+  variants?: any[]
+  versions?: any[]
 }
 
 export interface AllListMatch {
   name?: string
   url?: string
-  variant?: any[]
-  version?: any[]
+  variants?: any[]
+  versions?: any[]
 }
 
 export interface Data {
   name?: string
   url?: string
-  variant?: any[]
-  version?: any[]
+  variants?: any[]
+  versions?: any[]
 }
 
 export interface DataListMatch {

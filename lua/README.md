@@ -54,7 +54,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local alls, err = client:All():list()
+local datas, err = client:Data():list()
 if err then error(err) end
 ```
 
@@ -112,7 +112,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:All():list()
+local result, err = client:Data():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -223,9 +223,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local all, err = client:All():load()
+    local get_logo_by_name, err = client:GetLogoByName():load({ id = "example_id" })
     if err then error(err) end
-    -- all is the loaded record
+    -- get_logo_by_name is the loaded record
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -238,8 +238,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -251,8 +251,8 @@ API path: `/all`
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -297,8 +297,8 @@ Create an instance: `local all = client:All(nil)`
 | --- | --- | --- |
 | `name` | `string` |  |
 | `url` | `string` |  |
-| `variant` | `table` |  |
-| `version` | `table` |  |
+| `variants` | `table` |  |
+| `versions` | `table` |  |
 
 #### Example: List
 
@@ -323,8 +323,8 @@ Create an instance: `local data = client:Data(nil)`
 | --- | --- | --- |
 | `name` | `string` |  |
 | `url` | `string` |  |
-| `variant` | `table` |  |
-| `version` | `table` |  |
+| `variants` | `table` |  |
+| `versions` | `table` |  |
 
 #### Example: List
 
@@ -443,11 +443,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local all = client:All()
-all:list()
+local data = client:Data()
+data:list()
 
--- all:data_get() now returns the all data from the last list
--- all:match_get() returns the last match criteria
+-- data:data_get() now returns the data data from the last list
+-- data:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

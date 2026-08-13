@@ -43,14 +43,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "variant",
+            ["name"] = "variants",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "version",
+            ["name"] = "versions",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 3,
@@ -65,6 +65,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/all",
                 ["parts"] = {
@@ -103,14 +104,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "variant",
+            ["name"] = "variants",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 2,
           },
           {
             ["active"] = true,
-            ["name"] = "version",
+            ["name"] = "versions",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 3,
@@ -144,6 +145,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/random/data",
                 ["parts"] = {
@@ -178,6 +180,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{logoName}/data",
                 ["parts"] = {
@@ -250,6 +253,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{logoName}",
                 ["parts"] = {
@@ -311,6 +315,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/random",
                 ["parts"] = {

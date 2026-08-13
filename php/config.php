@@ -49,14 +49,14 @@ class LogotypesConfig
             ],
             [
               'active' => true,
-              'name' => 'variant',
+              'name' => 'variants',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 2,
             ],
             [
               'active' => true,
-              'name' => 'version',
+              'name' => 'versions',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 3,
@@ -71,6 +71,7 @@ class LogotypesConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/all',
                   'parts' => [
@@ -109,14 +110,14 @@ class LogotypesConfig
             ],
             [
               'active' => true,
-              'name' => 'variant',
+              'name' => 'variants',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 2,
             ],
             [
               'active' => true,
-              'name' => 'version',
+              'name' => 'versions',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 3,
@@ -150,6 +151,7 @@ class LogotypesConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/data',
                   'parts' => [
@@ -184,6 +186,7 @@ class LogotypesConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{logoName}/data',
                   'parts' => [
@@ -256,6 +259,7 @@ class LogotypesConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{logoName}',
                   'parts' => [
@@ -317,6 +321,7 @@ class LogotypesConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
                   'parts' => [

@@ -16,16 +16,16 @@
 # @!attribute [rw] url
 #   @return [String, nil]
 #
-# @!attribute [rw] variant
+# @!attribute [rw] variants
 #   @return [Array, nil]
 #
-# @!attribute [rw] version
+# @!attribute [rw] versions
 #   @return [Array, nil]
 All = Struct.new(
   :name,
   :url,
-  :variant,
-  :version,
+  :variants,
+  :versions,
   keyword_init: true
 )
 
@@ -37,16 +37,16 @@ All = Struct.new(
 # @!attribute [rw] url
 #   @return [String, nil]
 #
-# @!attribute [rw] variant
+# @!attribute [rw] variants
 #   @return [Array, nil]
 #
-# @!attribute [rw] version
+# @!attribute [rw] versions
 #   @return [Array, nil]
 AllListMatch = Struct.new(
   :name,
   :url,
-  :variant,
-  :version,
+  :variants,
+  :versions,
   keyword_init: true
 )
 
@@ -58,16 +58,16 @@ AllListMatch = Struct.new(
 # @!attribute [rw] url
 #   @return [String, nil]
 #
-# @!attribute [rw] variant
+# @!attribute [rw] variants
 #   @return [Array, nil]
 #
-# @!attribute [rw] version
+# @!attribute [rw] versions
 #   @return [Array, nil]
-Data = Struct.new(
+DataType = Struct.new(
   :name,
   :url,
-  :variant,
-  :version,
+  :variants,
+  :versions,
   keyword_init: true
 )
 

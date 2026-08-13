@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from logotypes_sdk.utility.voxgig_struct import voxgig_struct as vs
 from logotypes_sdk import LogotypesSDK
-from core import helpers
+from logotypes_sdk.core import helpers
 from test import runner
 
 

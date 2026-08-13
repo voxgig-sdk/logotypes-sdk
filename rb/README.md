@@ -51,7 +51,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  alls = client.All.list()
+  datas = client.Data.list()
 rescue => err
   warn "list failed: #{err}"
 end
@@ -119,9 +119,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = LogotypesSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-all = client.All.list()
-puts all
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+data = client.Data.list()
+puts data
 ```
 
 ### Use a custom fetch function
@@ -242,8 +243,8 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -255,8 +256,8 @@ API path: `/all`
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -301,8 +302,8 @@ Create an instance: `all = client.All`
 | --- | --- | --- |
 | `name` | `String` |  |
 | `url` | `String` |  |
-| `variant` | `Array` |  |
-| `version` | `Array` |  |
+| `variants` | `Array` |  |
+| `versions` | `Array` |  |
 
 #### Example: List
 
@@ -328,8 +329,8 @@ Create an instance: `data = client.Data`
 | --- | --- | --- |
 | `name` | `String` |  |
 | `url` | `String` |  |
-| `variant` | `Array` |  |
-| `version` | `Array` |  |
+| `variants` | `Array` |  |
+| `versions` | `Array` |  |
 
 #### Example: List
 
@@ -352,7 +353,7 @@ Create an instance: `get_logo_by_name = client.GetLogoByName`
 #### Example: Load
 
 ```ruby
-# load returns the bare GetLogoByName record (raises on error).
+# load returns the ENTITY — call data_get for the GetLogoByName record (raises on error).
 get_logo_by_name = client.GetLogoByName.load({ "id" => "get_logo_by_name_id" })
 ```
 
@@ -370,7 +371,7 @@ Create an instance: `logo = client.Logo`
 #### Example: Load
 
 ```ruby
-# load returns the bare Logo record (raises on error).
+# load returns the ENTITY — call data_get for the Logo record (raises on error).
 logo = client.Logo.load()
 ```
 
@@ -451,11 +452,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-all = client.All
-all.list()
+data = client.Data
+data.list()
 
-# all.data_get now returns the all data from the last list
-# all.match_get returns the last match criteria
+# data.data_get now returns the data data from the last list
+# data.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

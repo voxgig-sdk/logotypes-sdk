@@ -43,14 +43,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "variant",
+						"name": "variants",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 2,
 					},
 					map[string]any{
 						"active": true,
-						"name": "version",
+						"name": "versions",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 3,
@@ -65,6 +65,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/all",
 								"parts": []any{
@@ -78,7 +79,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -103,14 +103,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "variant",
+						"name": "variants",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 2,
 					},
 					map[string]any{
 						"active": true,
-						"name": "version",
+						"name": "versions",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 3,
@@ -144,6 +144,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/random/data",
 								"parts": []any{
@@ -178,6 +179,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/{logoName}/data",
 								"parts": []any{
@@ -201,7 +203,6 @@ func MakeConfig() map[string]any {
 								"index$": 1,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -250,6 +251,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/{logoName}",
 								"parts": []any{
@@ -274,7 +276,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -311,6 +312,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/random",
 								"parts": []any{
@@ -329,7 +331,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{

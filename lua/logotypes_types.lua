@@ -9,20 +9,20 @@
 ---@class All
 ---@field name? string
 ---@field url? string
----@field variant? table
----@field version? table
+---@field variants? table
+---@field versions? table
 
 ---@class AllListMatch
 ---@field name? string
 ---@field url? string
----@field variant? table
----@field version? table
+---@field variants? table
+---@field versions? table
 
 ---@class Data
 ---@field name? string
 ---@field url? string
----@field variant? table
----@field version? table
+---@field variants? table
+---@field versions? table
 
 ---@class DataListMatch
 ---@field logo_name? string

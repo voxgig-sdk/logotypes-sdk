@@ -16,12 +16,12 @@ main: kit: entity: all: {
       type: "`$STRING`"
     }
     {
-      name: "variant"
+      name: "variants"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "version"
+      name: "versions"
       req: false
       type: "`$ARRAY`"
     }

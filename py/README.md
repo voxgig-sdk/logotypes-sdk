@@ -57,8 +57,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    alls = client.All().list()
-    print(alls)
+    datas = client.Data().list()
+    print(datas)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -124,9 +124,10 @@ Create a mock client for unit testing — no server required:
 ```python
 client = LogotypesSDK.test()
 
-# Entity ops return the bare record and raise on error.
-all = client.All().list()
-# all contains the mock response record
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
+data = client.Data().list()
+# data contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -248,8 +249,8 @@ On error, `ok` is `False` and `err` contains the error value.
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -261,8 +262,8 @@ API path: `/all`
 | --- | --- |
 | `name` |  |
 | `url` |  |
-| `variant` |  |
-| `version` |  |
+| `variants` |  |
+| `versions` |  |
 
 Operations: List.
 
@@ -307,8 +308,8 @@ Create an instance: `all = client.All()`
 | --- | --- | --- |
 | `name` | `str` |  |
 | `url` | `str` |  |
-| `variant` | `list` |  |
-| `version` | `list` |  |
+| `variants` | `list` |  |
+| `versions` | `list` |  |
 
 #### Example: List
 
@@ -333,8 +334,8 @@ Create an instance: `data = client.Data()`
 | --- | --- | --- |
 | `name` | `str` |  |
 | `url` | `str` |  |
-| `variant` | `list` |  |
-| `version` | `list` |  |
+| `variants` | `list` |  |
+| `versions` | `list` |  |
 
 #### Example: List
 
@@ -452,11 +453,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-all = client.All()
-all.list()
+data = client.Data()
+data.list()
 
-# all.data_get() now returns the all data from the last list
-# all.match_get() returns the last match criteria
+# data.data_get() now returns the data data from the last list
+# data.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

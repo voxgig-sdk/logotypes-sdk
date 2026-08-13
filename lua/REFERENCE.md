@@ -104,8 +104,8 @@ local all = client:All(nil)
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `table` | No |  |
-| `version` | `table` | No |  |
+| `variants` | `table` | No |  |
+| `versions` | `table` | No |  |
 
 ### Operations
 
@@ -159,8 +159,8 @@ local data = client:Data(nil)
 | --- | --- | --- | --- |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
-| `variant` | `table` | No |  |
-| `version` | `table` | No |  |
+| `variants` | `table` | No |  |
+| `versions` | `table` | No |  |
 
 ### Operations
 

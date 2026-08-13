@@ -68,12 +68,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-alls, err := client.All(nil).List(nil, nil)
+datas, err := client.Data(nil).List(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = alls
+_ = datas
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-all, err := client.All(nil).List(
+data, err := client.Data(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(all) // the returned mock data
+fmt.Println(data) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -267,8 +267,8 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"name"` |  |
 | `"url"` |  |
-| `"variant"` |  |
-| `"version"` |  |
+| `"variants"` |  |
+| `"versions"` |  |
 
 Operations: List.
 
@@ -280,8 +280,8 @@ API path: `/all`
 | --- | --- |
 | `"name"` |  |
 | `"url"` |  |
-| `"variant"` |  |
-| `"version"` |  |
+| `"variants"` |  |
+| `"versions"` |  |
 
 Operations: List.
 
@@ -326,8 +326,8 @@ Create an instance: `all := client.All(nil)`
 | --- | --- | --- |
 | `name` | `string` |  |
 | `url` | `string` |  |
-| `variant` | `[]any` |  |
-| `version` | `[]any` |  |
+| `variants` | `[]any` |  |
+| `versions` | `[]any` |  |
 
 #### Example: List
 
@@ -356,8 +356,8 @@ Create an instance: `data := client.Data(nil)`
 | --- | --- | --- |
 | `name` | `string` |  |
 | `url` | `string` |  |
-| `variant` | `[]any` |  |
-| `version` | `[]any` |  |
+| `variants` | `[]any` |  |
+| `versions` | `[]any` |  |
 
 #### Example: List
 
@@ -485,11 +485,11 @@ Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-all := client.All(nil)
-all.List(nil, nil)
+data := client.Data(nil)
+data.List(nil, nil)
 
-// all.Data() now returns the all data from the last list
-// all.Match() returns the last match criteria
+// data.Data() now returns the data data from the last list
+// data.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

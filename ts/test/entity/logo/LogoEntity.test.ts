@@ -62,7 +62,7 @@ describe('LogoEntity', async () => {
     // LOAD
     const logo_ref01_ent = client.Logo()
     const logo_ref01_match_dt0: any = {}
-    const logo_ref01_data_dt0 = await logo_ref01_ent.load(logo_ref01_match_dt0)
+    const logo_ref01_data_dt0 = (await logo_ref01_ent.load(logo_ref01_match_dt0)).data()
     assert(null != logo_ref01_data_dt0)
 
 

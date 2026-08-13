@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Logotypes',
   }
 
 
@@ -79,14 +79,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "variant",
+          "name": "variants",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "version",
+          "name": "versions",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
@@ -101,6 +101,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/all",
               "parts": [
@@ -139,14 +140,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "variant",
+          "name": "variants",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "version",
+          "name": "versions",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
@@ -180,6 +181,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/random/data",
               "parts": [
@@ -214,6 +216,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/{logoName}/data",
               "parts": [
@@ -286,6 +289,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/{logoName}",
               "parts": [
@@ -347,6 +351,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/random",
               "parts": [
