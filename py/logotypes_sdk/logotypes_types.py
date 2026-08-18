@@ -38,7 +38,10 @@ class Data(TypedDict, total=False):
 
 
 class DataListMatch(TypedDict, total=False):
-    logo_name: str
+    name: str
+    url: str
+    variants: list
+    versions: list
 
 
 class GetLogoByName(TypedDict):

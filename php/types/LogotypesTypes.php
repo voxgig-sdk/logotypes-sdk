@@ -42,7 +42,10 @@ class Data
 /** Request payload for Data#list. */
 class DataListMatch
 {
-    public ?string $logo_name = null;
+    public ?string $name = null;
+    public ?string $url = null;
+    public ?array $variants = null;
+    public ?array $versions = null;
 }
 
 /** GetLogoByName entity data model. */

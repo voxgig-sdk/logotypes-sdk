@@ -28,7 +28,7 @@ class LogotypesSDK
     utility = LogotypesUtility.new
     @_utility = utility
 
-    config = LogotypesConfig.make_config
+    config = LogotypesConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

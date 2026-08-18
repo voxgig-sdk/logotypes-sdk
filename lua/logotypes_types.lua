@@ -25,7 +25,10 @@
 ---@field versions? table
 
 ---@class DataListMatch
----@field logo_name? string
+---@field name? string
+---@field url? string
+---@field variants? table
+---@field versions? table
 
 ---@class GetLogoByName
 

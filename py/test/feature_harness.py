@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from logotypes_sdk.config import make_config
+from logotypes_sdk.config import shared_config
 from logotypes_sdk.features import _make_feature
 from logotypes_sdk.core.control import LogotypesControl
 from logotypes_sdk.core.error import LogotypesError
@@ -24,7 +24,7 @@ from logotypes_sdk.core.spec import LogotypesSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

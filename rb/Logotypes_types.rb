@@ -73,10 +73,22 @@ DataType = Struct.new(
 
 # Request payload for Data#list.
 #
-# @!attribute [rw] logo_name
+# @!attribute [rw] name
 #   @return [String, nil]
+#
+# @!attribute [rw] url
+#   @return [String, nil]
+#
+# @!attribute [rw] variants
+#   @return [Array, nil]
+#
+# @!attribute [rw] versions
+#   @return [Array, nil]
 DataListMatch = Struct.new(
-  :logo_name,
+  :name,
+  :url,
+  :variants,
+  :versions,
   keyword_init: true
 )
 

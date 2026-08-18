@@ -40,7 +40,7 @@ class LogotypesSDK
         $utility = new LogotypesUtility();
         $this->_utility = $utility;
 
-        $config = LogotypesConfig::make_config();
+        $config = LogotypesConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
