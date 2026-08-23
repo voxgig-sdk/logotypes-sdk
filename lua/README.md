@@ -236,10 +236,10 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: List.
 
@@ -249,10 +249,10 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: List.
 
@@ -295,10 +295,10 @@ Create an instance: `local all = client:All(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `string` |  |
-| `url` | `string` |  |
-| `variants` | `table` |  |
-| `versions` | `table` |  |
+| `name` | `string` | The name of the logo |
+| `url` | `string` | The URL to access the logo |
+| `variants` | `table` | Available variants for the logo |
+| `versions` | `table` | Available color versions for the logo |
 
 #### Example: List
 
@@ -321,10 +321,10 @@ Create an instance: `local data = client:Data(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `string` |  |
-| `url` | `string` |  |
-| `variants` | `table` |  |
-| `versions` | `table` |  |
+| `name` | `string` | The name of the logo |
+| `url` | `string` | The URL to access the logo |
+| `variants` | `table` | Available variants for the logo |
+| `versions` | `table` | Available color versions for the logo |
 
 #### Example: List
 

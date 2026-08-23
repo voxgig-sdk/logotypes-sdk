@@ -247,10 +247,10 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: List.
 
@@ -260,10 +260,10 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: List.
 
@@ -306,10 +306,10 @@ Create an instance: `all = client.All()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `str` |  |
-| `url` | `str` |  |
-| `variants` | `list` |  |
-| `versions` | `list` |  |
+| `name` | `str` | The name of the logo |
+| `url` | `str` | The URL to access the logo |
+| `variants` | `list` | Available variants for the logo |
+| `versions` | `list` | Available color versions for the logo |
 
 #### Example: List
 
@@ -332,10 +332,10 @@ Create an instance: `data = client.Data()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `str` |  |
-| `url` | `str` |  |
-| `variants` | `list` |  |
-| `versions` | `list` |  |
+| `name` | `str` | The name of the logo |
+| `url` | `str` | The URL to access the logo |
+| `variants` | `list` | Available variants for the logo |
+| `versions` | `list` | Available color versions for the logo |
 
 #### Example: List
 

@@ -99,10 +99,10 @@ all = client.All()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `str` | No |  |
-| `url` | `str` | No |  |
-| `variants` | `list` | No |  |
-| `versions` | `list` | No |  |
+| `name` | `str` | No | The name of the logo |
+| `url` | `str` | No | The URL to access the logo |
+| `variants` | `list` | No | Available variants for the logo |
+| `versions` | `list` | No | Available color versions for the logo |
 
 ### Operations
 
@@ -155,10 +155,10 @@ data = client.Data()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `str` | No |  |
-| `url` | `str` | No |  |
-| `variants` | `list` | No |  |
-| `versions` | `list` | No |  |
+| `name` | `str` | No | The name of the logo |
+| `url` | `str` | No | The URL to access the logo |
+| `variants` | `list` | No | Available variants for the logo |
+| `versions` | `list` | No | Available color versions for the logo |
 
 ### Operations
 

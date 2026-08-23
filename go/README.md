@@ -6,7 +6,7 @@ The Golang SDK for the Logotypes API — an entity-oriented client using standar
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.All(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -265,10 +265,10 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"name"` |  |
-| `"url"` |  |
-| `"variants"` |  |
-| `"versions"` |  |
+| `"name"` | The name of the logo |
+| `"url"` | The URL to access the logo |
+| `"variants"` | Available variants for the logo |
+| `"versions"` | Available color versions for the logo |
 
 Operations: List.
 
@@ -278,10 +278,10 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `"name"` |  |
-| `"url"` |  |
-| `"variants"` |  |
-| `"versions"` |  |
+| `"name"` | The name of the logo |
+| `"url"` | The URL to access the logo |
+| `"variants"` | Available variants for the logo |
+| `"versions"` | Available color versions for the logo |
 
 Operations: List.
 
@@ -324,10 +324,10 @@ Create an instance: `all := client.All(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `string` |  |
-| `url` | `string` |  |
-| `variants` | `[]any` |  |
-| `versions` | `[]any` |  |
+| `name` | `string` | The name of the logo |
+| `url` | `string` | The URL to access the logo |
+| `variants` | `[]any` | Available variants for the logo |
+| `versions` | `[]any` | Available color versions for the logo |
 
 #### Example: List
 
@@ -354,10 +354,10 @@ Create an instance: `data := client.Data(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `string` |  |
-| `url` | `string` |  |
-| `variants` | `[]any` |  |
-| `versions` | `[]any` |  |
+| `name` | `string` | The name of the logo |
+| `url` | `string` | The URL to access the logo |
+| `variants` | `[]any` | Available variants for the logo |
+| `versions` | `[]any` | Available color versions for the logo |
 
 #### Example: List
 

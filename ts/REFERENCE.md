@@ -152,10 +152,10 @@ const all = client.All()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
-| `variants` | `any[]` | No |  |
-| `versions` | `any[]` | No |  |
+| `name` | `string` | No | The name of the logo |
+| `url` | `string` | No | The URL to access the logo |
+| `variants` | `any[]` | No | Available variants for the logo |
+| `versions` | `any[]` | No | Available color versions for the logo |
 
 ### Operations
 
@@ -205,10 +205,10 @@ const data = client.Data()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
-| `variants` | `any[]` | No |  |
-| `versions` | `any[]` | No |  |
+| `name` | `string` | No | The name of the logo |
+| `url` | `string` | No | The URL to access the logo |
+| `variants` | `any[]` | No | Available variants for the logo |
+| `versions` | `any[]` | No | Available color versions for the logo |
 
 ### Operations
 

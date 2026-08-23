@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Logotypes",
+            "slug": "logotypes",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -53,18 +56,22 @@ def make_config():
         "fields": [
           {
             "name": "name",
+            "short": "The name of the logo",
             "type": "`$STRING`",
           },
           {
             "name": "url",
+            "short": "The URL to access the logo",
             "type": "`$STRING`",
           },
           {
             "name": "variants",
+            "short": "Available variants for the logo",
             "type": "`$ARRAY`",
           },
           {
             "name": "versions",
+            "short": "Available color versions for the logo",
             "type": "`$ARRAY`",
           },
         ],
@@ -99,18 +106,22 @@ def make_config():
         "fields": [
           {
             "name": "name",
+            "short": "The name of the logo",
             "type": "`$STRING`",
           },
           {
             "name": "url",
+            "short": "The URL to access the logo",
             "type": "`$STRING`",
           },
           {
             "name": "variants",
+            "short": "Available variants for the logo",
             "type": "`$ARRAY`",
           },
           {
             "name": "versions",
+            "short": "Available color versions for the logo",
             "type": "`$ARRAY`",
           },
         ],

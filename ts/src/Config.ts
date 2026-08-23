@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Logotypes',
+        slug: "logotypes",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -65,18 +76,22 @@ class Config {
       "fields": [
         {
           "name": "name",
+          "short": "The name of the logo",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "The URL to access the logo",
           "type": "`$STRING`"
         },
         {
           "name": "variants",
+          "short": "Available variants for the logo",
           "type": "`$ARRAY`"
         },
         {
           "name": "versions",
+          "short": "Available color versions for the logo",
           "type": "`$ARRAY`"
         }
       ],
@@ -111,18 +126,22 @@ class Config {
       "fields": [
         {
           "name": "name",
+          "short": "The name of the logo",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "The URL to access the logo",
           "type": "`$STRING`"
         },
         {
           "name": "variants",
+          "short": "Available variants for the logo",
           "type": "`$ARRAY`"
         },
         {
           "name": "versions",
+          "short": "Available color versions for the logo",
           "type": "`$ARRAY`"
         }
       ],

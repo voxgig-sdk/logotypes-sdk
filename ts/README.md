@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -292,10 +292,10 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: list.
 
@@ -305,10 +305,10 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: list.
 
@@ -351,10 +351,10 @@ Create an instance: `const all = client.All()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `string` |  |
-| `url` | `string` |  |
-| `variants` | `any[]` |  |
-| `versions` | `any[]` |  |
+| `name` | `string` | The name of the logo |
+| `url` | `string` | The URL to access the logo |
+| `variants` | `any[]` | Available variants for the logo |
+| `versions` | `any[]` | Available color versions for the logo |
 
 #### Example: List
 
@@ -377,10 +377,10 @@ Create an instance: `const data = client.Data()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `string` |  |
-| `url` | `string` |  |
-| `variants` | `any[]` |  |
-| `versions` | `any[]` |  |
+| `name` | `string` | The name of the logo |
+| `url` | `string` | The URL to access the logo |
+| `variants` | `any[]` | Available variants for the logo |
+| `versions` | `any[]` | Available color versions for the logo |
 
 #### Example: List
 

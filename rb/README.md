@@ -241,10 +241,10 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: List.
 
@@ -254,10 +254,10 @@ API path: `/all`
 
 | Field | Description |
 | --- | --- |
-| `name` |  |
-| `url` |  |
-| `variants` |  |
-| `versions` |  |
+| `name` | The name of the logo |
+| `url` | The URL to access the logo |
+| `variants` | Available variants for the logo |
+| `versions` | Available color versions for the logo |
 
 Operations: List.
 
@@ -300,10 +300,10 @@ Create an instance: `all = client.All`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `String` |  |
-| `url` | `String` |  |
-| `variants` | `Array` |  |
-| `versions` | `Array` |  |
+| `name` | `String` | The name of the logo |
+| `url` | `String` | The URL to access the logo |
+| `variants` | `Array` | Available variants for the logo |
+| `versions` | `Array` | Available color versions for the logo |
 
 #### Example: List
 
@@ -327,10 +327,10 @@ Create an instance: `data = client.Data`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | `String` |  |
-| `url` | `String` |  |
-| `variants` | `Array` |  |
-| `versions` | `Array` |  |
+| `name` | `String` | The name of the logo |
+| `url` | `String` | The URL to access the logo |
+| `variants` | `Array` | Available variants for the logo |
+| `versions` | `Array` | Available color versions for the logo |
 
 #### Example: List
 

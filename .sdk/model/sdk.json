@@ -36,24 +36,28 @@
               "active": true,
               "name": "name",
               "req": false,
+              "short": "The name of the logo",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "The URL to access the logo",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "variants",
               "req": false,
+              "short": "Available variants for the logo",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "versions",
               "req": false,
+              "short": "Available color versions for the logo",
               "type": "`$ARRAY`"
             }
           ],
@@ -95,24 +99,28 @@
               "active": true,
               "name": "name",
               "req": false,
+              "short": "The name of the logo",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "The URL to access the logo",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "variants",
               "req": false,
+              "short": "Available variants for the logo",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "versions",
               "req": false,
+              "short": "Available color versions for the logo",
               "type": "`$ARRAY`"
             }
           ],

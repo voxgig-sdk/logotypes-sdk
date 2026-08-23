@@ -19,6 +19,9 @@ module LogotypesConfig
     {
       "main" => {
         "name" => "Logotypes",
+        "slug" => "logotypes",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -44,18 +47,22 @@ module LogotypesConfig
           "fields" => [
             {
               "name" => "name",
+              "short" => "The name of the logo",
               "type" => "`$STRING`",
             },
             {
               "name" => "url",
+              "short" => "The URL to access the logo",
               "type" => "`$STRING`",
             },
             {
               "name" => "variants",
+              "short" => "Available variants for the logo",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "versions",
+              "short" => "Available color versions for the logo",
               "type" => "`$ARRAY`",
             },
           ],
@@ -90,18 +97,22 @@ module LogotypesConfig
           "fields" => [
             {
               "name" => "name",
+              "short" => "The name of the logo",
               "type" => "`$STRING`",
             },
             {
               "name" => "url",
+              "short" => "The URL to access the logo",
               "type" => "`$STRING`",
             },
             {
               "name" => "variants",
+              "short" => "Available variants for the logo",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "versions",
+              "short" => "Available color versions for the logo",
               "type" => "`$ARRAY`",
             },
           ],

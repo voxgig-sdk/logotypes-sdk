@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Logotypes",
+			"slug": "logotypes",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -36,18 +39,22 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "name",
+						"short": "The name of the logo",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "The URL to access the logo",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "variants",
+						"short": "Available variants for the logo",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "versions",
+						"short": "Available color versions for the logo",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -82,18 +89,22 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "name",
+						"short": "The name of the logo",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "The URL to access the logo",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "variants",
+						"short": "Available variants for the logo",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "versions",
+						"short": "Available color versions for the logo",
 						"type": "`$ARRAY`",
 					},
 				},

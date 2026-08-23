@@ -104,10 +104,10 @@ $all = $client->All();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
-| `variants` | `array` | No |  |
-| `versions` | `array` | No |  |
+| `name` | `string` | No | The name of the logo |
+| `url` | `string` | No | The URL to access the logo |
+| `variants` | `array` | No | Available variants for the logo |
+| `versions` | `array` | No | Available color versions for the logo |
 
 ### Operations
 
@@ -159,10 +159,10 @@ $data = $client->Data();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
-| `variants` | `array` | No |  |
-| `versions` | `array` | No |  |
+| `name` | `string` | No | The name of the logo |
+| `url` | `string` | No | The URL to access the logo |
+| `variants` | `array` | No | Available variants for the logo |
+| `versions` | `array` | No | Available color versions for the logo |
 
 ### Operations
 

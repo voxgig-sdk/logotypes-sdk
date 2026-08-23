@@ -102,10 +102,10 @@ local all = client:All(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
-| `variants` | `table` | No |  |
-| `versions` | `table` | No |  |
+| `name` | `string` | No | The name of the logo |
+| `url` | `string` | No | The URL to access the logo |
+| `variants` | `table` | No | Available variants for the logo |
+| `versions` | `table` | No | Available color versions for the logo |
 
 ### Operations
 
@@ -157,10 +157,10 @@ local data = client:Data(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
-| `variants` | `table` | No |  |
-| `versions` | `table` | No |  |
+| `name` | `string` | No | The name of the logo |
+| `url` | `string` | No | The URL to access the logo |
+| `variants` | `table` | No | Available variants for the logo |
+| `versions` | `table` | No | Available color versions for the logo |
 
 ### Operations
 
