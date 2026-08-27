@@ -28,6 +28,7 @@ module LogotypesConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -200,7 +201,12 @@ module LogotypesConfig
           },
         },
         "get_logo_by_name" => {
-          "fields" => [],
+          "fields" => [
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+          ],
           "name" => "get_logo_by_name",
           "op" => {
             "load" => {

@@ -31,6 +31,7 @@
 ---@field versions? table
 
 ---@class GetLogoByName
+---@field id? string
 
 ---@class GetLogoByNameLoadMatch
 ---@field id string

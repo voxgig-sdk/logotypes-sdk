@@ -4,6 +4,19 @@ main: kit: entity: get_logo_by_name: {
 
   alias: field: {}
 
+  fields: [
+    {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
   name: "get_logo_by_name"
   op: {
     load: {

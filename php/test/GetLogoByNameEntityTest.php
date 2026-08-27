@@ -48,9 +48,13 @@ class GetLogoByNameEntityTest extends TestCase
 
         // LOAD
         $get_logo_by_name_ref01_ent = $client->GetLogoByName(null);
-        $get_logo_by_name_ref01_match_dt0 = [];
+        $get_logo_by_name_ref01_match_dt0 = [
+            "id" => $get_logo_by_name_ref01_data["id"],
+        ];
         $get_logo_by_name_ref01_data_dt0_loaded = $get_logo_by_name_ref01_ent->load($get_logo_by_name_ref01_match_dt0, null);
-        $this->assertNotNull($get_logo_by_name_ref01_data_dt0_loaded);
+        $get_logo_by_name_ref01_data_dt0_load_result = Helpers::to_map(is_object($get_logo_by_name_ref01_data_dt0_loaded) && method_exists($get_logo_by_name_ref01_data_dt0_loaded, 'data_get') ? $get_logo_by_name_ref01_data_dt0_loaded->data_get() : $get_logo_by_name_ref01_data_dt0_loaded);
+        $this->assertNotNull($get_logo_by_name_ref01_data_dt0_load_result);
+        $this->assertEquals($get_logo_by_name_ref01_data_dt0_load_result["id"], $get_logo_by_name_ref01_data["id"]);
 
     }
 }

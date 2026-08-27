@@ -61,13 +61,19 @@ func TestGetLogoByNameEntity(t *testing.T) {
 
 		// LOAD
 		getLogoByNameRef01Ent := client.GetLogoByName(nil)
-		getLogoByNameRef01MatchDt0 := map[string]any{}
+		getLogoByNameRef01MatchDt0 := map[string]any{
+			"id": getLogoByNameRef01Data["id"],
+		}
 		getLogoByNameRef01DataDt0Loaded, err := getLogoByNameRef01Ent.Load(getLogoByNameRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if getLogoByNameRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		getLogoByNameRef01DataDt0LoadResult := core.ToMapAny(entityData(getLogoByNameRef01DataDt0Loaded))
+		if getLogoByNameRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if getLogoByNameRef01DataDt0LoadResult["id"] != getLogoByNameRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

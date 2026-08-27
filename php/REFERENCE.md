@@ -210,6 +210,12 @@ Return the entity name.
 $get_logo_by_name = $client->GetLogoByName();
 ```
 
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
 ### Operations
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`

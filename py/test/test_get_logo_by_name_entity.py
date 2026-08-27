@@ -48,9 +48,13 @@ class TestGetLogoByNameEntity:
 
         # LOAD
         get_logo_by_name_ref01_ent = client.GetLogoByName(None)
-        get_logo_by_name_ref01_match_dt0 = {}
+        get_logo_by_name_ref01_match_dt0 = {
+            "id": get_logo_by_name_ref01_data["id"],
+        }
         get_logo_by_name_ref01_data_dt0_loaded = get_logo_by_name_ref01_ent.load(get_logo_by_name_ref01_match_dt0, None)
-        assert get_logo_by_name_ref01_data_dt0_loaded is not None
+        get_logo_by_name_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(get_logo_by_name_ref01_data_dt0_loaded))
+        assert get_logo_by_name_ref01_data_dt0_load_result is not None
+        assert get_logo_by_name_ref01_data_dt0_load_result["id"] == get_logo_by_name_ref01_data["id"]
 
 
 

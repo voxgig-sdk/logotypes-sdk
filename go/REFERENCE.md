@@ -214,6 +214,12 @@ getLogoByName := client.GetLogoByName(nil)
 fmt.Println(getLogoByName.GetName()) // "get_logo_by_name"
 ```
 
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
 ### Operations
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`

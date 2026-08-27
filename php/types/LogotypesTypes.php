@@ -51,6 +51,7 @@ class DataListMatch
 /** GetLogoByName entity data model. */
 class GetLogoByName
 {
+    public ?string $id = null;
 }
 
 /** Request payload for GetLogoByName#load. */

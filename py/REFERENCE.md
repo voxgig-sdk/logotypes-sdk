@@ -207,6 +207,12 @@ Return the entity name.
 get_logo_by_name = client.GetLogoByName()
 ```
 
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `str` | No |  |
+
 ### Operations
 
 #### `load(reqmatch, ctrl=None) -> dict`

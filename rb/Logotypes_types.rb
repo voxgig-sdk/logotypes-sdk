@@ -93,8 +93,13 @@ DataListMatch = Struct.new(
 )
 
 # GetLogoByName entity data model.
-class GetLogoByName
-end
+#
+# @!attribute [rw] id
+#   @return [String, nil]
+GetLogoByName = Struct.new(
+  :id,
+  keyword_init: true
+)
 
 # Request payload for GetLogoByName#load.
 #

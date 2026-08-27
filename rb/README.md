@@ -267,6 +267,7 @@ API path: `/random/data`
 
 | Field | Description |
 | --- | --- |
+| `id` |  |
 
 Operations: Load.
 
@@ -349,6 +350,12 @@ Create an instance: `get_logo_by_name = client.GetLogoByName`
 | Method | Description |
 | --- | --- |
 | `load(match)` | Load a single entity by match criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `String` |  |
 
 #### Example: Load
 

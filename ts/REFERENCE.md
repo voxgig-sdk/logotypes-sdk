@@ -254,6 +254,12 @@ Return a copy of the entity options.
 const get_logo_by_name = client.GetLogoByName()
 ```
 
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
 ### Operations
 
 #### `load(match: object, ctrl?: object)`

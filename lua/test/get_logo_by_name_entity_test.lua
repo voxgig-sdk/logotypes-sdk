@@ -44,10 +44,14 @@ describe("GetLogoByNameEntity", function()
 
     -- LOAD
     local get_logo_by_name_ref01_ent = client:GetLogoByName(nil)
-    local get_logo_by_name_ref01_match_dt0 = {}
+    local get_logo_by_name_ref01_match_dt0 = {
+      id = get_logo_by_name_ref01_data["id"],
+    }
     local get_logo_by_name_ref01_data_dt0_loaded, err = get_logo_by_name_ref01_ent:load(get_logo_by_name_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(get_logo_by_name_ref01_data_dt0_loaded)
+    local get_logo_by_name_ref01_data_dt0_load_result = helpers.to_map(type(get_logo_by_name_ref01_data_dt0_loaded) == 'table' and get_logo_by_name_ref01_data_dt0_loaded.data_get and get_logo_by_name_ref01_data_dt0_loaded:data_get() or get_logo_by_name_ref01_data_dt0_loaded)
+    assert.is_not_nil(get_logo_by_name_ref01_data_dt0_load_result)
+    assert.are.equal(get_logo_by_name_ref01_data_dt0_load_result["id"], get_logo_by_name_ref01_data["id"])
 
   end)
 end)

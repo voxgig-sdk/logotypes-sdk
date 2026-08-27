@@ -34,6 +34,7 @@ export interface DataListMatch {
 }
 
 export interface GetLogoByName {
+  id?: string
 }
 
 export interface GetLogoByNameLoadMatch {

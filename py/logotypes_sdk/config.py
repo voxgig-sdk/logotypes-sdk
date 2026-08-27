@@ -37,6 +37,7 @@ def make_config():
         "options": {
           "active": False,
         },
+        "transport": "base",
       },
         },
         "options": {
@@ -209,7 +210,12 @@ def make_config():
         },
       },
       "get_logo_by_name": {
-        "fields": [],
+        "fields": [
+          {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+        ],
         "name": "get_logo_by_name",
         "op": {
           "load": {

@@ -44,8 +44,8 @@ class DataListMatch(TypedDict, total=False):
     versions: list
 
 
-class GetLogoByName(TypedDict):
-    pass
+class GetLogoByName(TypedDict, total=False):
+    id: str
 
 
 class GetLogoByNameLoadMatch(TypedDict):

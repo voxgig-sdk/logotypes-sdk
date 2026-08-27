@@ -46,6 +46,7 @@ type DataListMatch struct {
 
 // GetLogoByName is the typed data model for the get_logo_by_name entity.
 type GetLogoByName struct {
+	Id *string `json:"id,omitempty"`
 }
 
 // GetLogoByNameLoadMatch is the typed request payload for GetLogoByName.LoadTyped.

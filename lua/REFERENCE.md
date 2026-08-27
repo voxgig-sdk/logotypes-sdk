@@ -208,6 +208,12 @@ Return the entity name.
 local get_logo_by_name = client:GetLogoByName(nil)
 ```
 
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `id` | `string` | No |  |
+
 ### Operations
 
 #### `load(reqmatch, ctrl) -> any, err`

@@ -41,9 +41,13 @@ class GetLogoByNameEntityTest < Minitest::Test
 
     # LOAD
     get_logo_by_name_ref01_ent = client.GetLogoByName(nil)
-    get_logo_by_name_ref01_match_dt0 = {}
+    get_logo_by_name_ref01_match_dt0 = {
+      "id" => get_logo_by_name_ref01_data["id"],
+    }
     get_logo_by_name_ref01_data_dt0_loaded = get_logo_by_name_ref01_ent.load(get_logo_by_name_ref01_match_dt0, nil)
-    assert !get_logo_by_name_ref01_data_dt0_loaded.nil?
+    get_logo_by_name_ref01_data_dt0_load_result = Helpers.to_map(get_logo_by_name_ref01_data_dt0_loaded.respond_to?(:data_get) ? get_logo_by_name_ref01_data_dt0_loaded.data_get : get_logo_by_name_ref01_data_dt0_loaded)
+    assert !get_logo_by_name_ref01_data_dt0_load_result.nil?
+    assert_equal get_logo_by_name_ref01_data_dt0_load_result["id"], get_logo_by_name_ref01_data["id"]
 
   end
 end
