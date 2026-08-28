@@ -42,10 +42,8 @@ class Data
 /** Request payload for Data#list. */
 class DataListMatch
 {
-    public ?string $name = null;
-    public ?string $url = null;
-    public ?array $variants = null;
-    public ?array $versions = null;
+    public ?string $variant = null;
+    public ?string $version = null;
 }
 
 /** GetLogoByName entity data model. */
@@ -58,6 +56,8 @@ class GetLogoByName
 class GetLogoByNameLoadMatch
 {
     public string $id;
+    public ?string $variant = null;
+    public ?string $version = null;
 }
 
 /** Logo entity data model. */
@@ -68,5 +68,7 @@ class Logo
 /** Request payload for Logo#load. */
 class LogoLoadMatch
 {
+    public ?string $variant = null;
+    public ?string $version = null;
 }
 

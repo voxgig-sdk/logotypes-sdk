@@ -73,22 +73,14 @@ DataType = Struct.new(
 
 # Request payload for Data#list.
 #
-# @!attribute [rw] name
+# @!attribute [rw] variant
 #   @return [String, nil]
 #
-# @!attribute [rw] url
+# @!attribute [rw] version
 #   @return [String, nil]
-#
-# @!attribute [rw] variants
-#   @return [Array, nil]
-#
-# @!attribute [rw] versions
-#   @return [Array, nil]
 DataListMatch = Struct.new(
-  :name,
-  :url,
-  :variants,
-  :versions,
+  :variant,
+  :version,
   keyword_init: true
 )
 
@@ -105,8 +97,16 @@ GetLogoByName = Struct.new(
 #
 # @!attribute [rw] id
 #   @return [String]
+#
+# @!attribute [rw] variant
+#   @return [String, nil]
+#
+# @!attribute [rw] version
+#   @return [String, nil]
 GetLogoByNameLoadMatch = Struct.new(
   :id,
+  :variant,
+  :version,
   keyword_init: true
 )
 
@@ -115,6 +115,15 @@ class Logo
 end
 
 # Request payload for Logo#load.
-class LogoLoadMatch
-end
+#
+# @!attribute [rw] variant
+#   @return [String, nil]
+#
+# @!attribute [rw] version
+#   @return [String, nil]
+LogoLoadMatch = Struct.new(
+  :variant,
+  :version,
+  keyword_init: true
+)
 

@@ -27,10 +27,8 @@ export interface Data {
 }
 
 export interface DataListMatch {
-  name?: string
-  url?: string
-  variants?: any[]
-  versions?: any[]
+  variant?: string
+  version?: string
 }
 
 export interface GetLogoByName {
@@ -39,11 +37,15 @@ export interface GetLogoByName {
 
 export interface GetLogoByNameLoadMatch {
   id: string
+  variant?: string
+  version?: string
 }
 
 export interface Logo {
 }
 
 export interface LogoLoadMatch {
+  variant?: string
+  version?: string
 }
 

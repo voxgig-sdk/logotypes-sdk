@@ -38,23 +38,27 @@ class Data(TypedDict, total=False):
 
 
 class DataListMatch(TypedDict, total=False):
-    name: str
-    url: str
-    variants: list
-    versions: list
+    variant: str
+    version: str
 
 
 class GetLogoByName(TypedDict, total=False):
     id: str
 
 
-class GetLogoByNameLoadMatch(TypedDict):
+class GetLogoByNameLoadMatchRequired(TypedDict):
     id: str
+
+
+class GetLogoByNameLoadMatch(GetLogoByNameLoadMatchRequired, total=False):
+    variant: str
+    version: str
 
 
 class Logo(TypedDict):
     pass
 
 
-class LogoLoadMatch(TypedDict):
-    pass
+class LogoLoadMatch(TypedDict, total=False):
+    variant: str
+    version: str

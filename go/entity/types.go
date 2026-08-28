@@ -38,10 +38,8 @@ type Data struct {
 
 // DataListMatch is the typed request payload for Data.ListTyped.
 type DataListMatch struct {
-	Name *string `json:"name,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Variants *[]any `json:"variants,omitempty"`
-	Versions *[]any `json:"versions,omitempty"`
+	Variant *string `json:"variant,omitempty"`
+	Version *string `json:"version,omitempty"`
 }
 
 // GetLogoByName is the typed data model for the get_logo_by_name entity.
@@ -52,6 +50,8 @@ type GetLogoByName struct {
 // GetLogoByNameLoadMatch is the typed request payload for GetLogoByName.LoadTyped.
 type GetLogoByNameLoadMatch struct {
 	Id string `json:"id"`
+	Variant *string `json:"variant,omitempty"`
+	Version *string `json:"version,omitempty"`
 }
 
 // Logo is the typed data model for the logo entity.
@@ -60,6 +60,8 @@ type Logo struct {
 
 // LogoLoadMatch is the typed request payload for Logo.LoadTyped.
 type LogoLoadMatch struct {
+	Variant *string `json:"variant,omitempty"`
+	Version *string `json:"version,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

@@ -25,20 +25,22 @@
 ---@field versions? table
 
 ---@class DataListMatch
----@field name? string
----@field url? string
----@field variants? table
----@field versions? table
+---@field variant? string
+---@field version? string
 
 ---@class GetLogoByName
 ---@field id? string
 
 ---@class GetLogoByNameLoadMatch
 ---@field id string
+---@field variant? string
+---@field version? string
 
 ---@class Logo
 
 ---@class LogoLoadMatch
+---@field variant? string
+---@field version? string
 
 local M = {}
 
