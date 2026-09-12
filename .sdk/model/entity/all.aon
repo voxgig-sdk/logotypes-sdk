@@ -39,8 +39,10 @@ main: kit: entity: all: {
         {
           method: "GET"
           orig: "/all"
-          parts: [
-            "all"
+          segments: [
+            {
+              lit: "all"
+            }
           ]
           transform: {
             req: "`reqdata`"

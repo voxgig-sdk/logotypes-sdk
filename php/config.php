@@ -92,13 +92,18 @@ class LogotypesConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/all',
-                  'parts' => [
-                    'all',
+                  'segments' => [
+                    [
+                      'lit' => 'all',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'all',
                   ],
                 ],
               ],
@@ -157,9 +162,13 @@ class LogotypesConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/data',
-                  'parts' => [
-                    'random',
-                    'data',
+                  'segments' => [
+                    [
+                      'lit' => 'random',
+                    ],
+                    [
+                      'lit' => 'data',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -170,6 +179,10 @@ class LogotypesConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'random',
+                    'data',
                   ],
                 ],
                 [
@@ -188,13 +201,17 @@ class LogotypesConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{logoName}/data',
-                  'parts' => [
-                    '{logo_name}',
-                    'data',
-                  ],
                   'rename' => [
                     'param' => [
                       'logoName' => 'logo_name',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'var' => 'logo_name',
+                    ],
+                    [
+                      'lit' => 'data',
                     ],
                   ],
                   'select' => [
@@ -205,6 +222,10 @@ class LogotypesConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    '{logo_name}',
+                    'data',
                   ],
                 ],
               ],
@@ -220,6 +241,10 @@ class LogotypesConfig
               'name' => 'id',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'get_logo_by_name',
           'op' => [
@@ -257,12 +282,14 @@ class LogotypesConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{logoName}',
-                  'parts' => [
-                    '{id}',
-                  ],
                   'rename' => [
                     'param' => [
                       'logoName' => 'id',
+                    ],
+                  ],
+                  'segments' => [
+                    [
+                      'var' => 'id',
                     ],
                   ],
                   'select' => [
@@ -275,6 +302,9 @@ class LogotypesConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    '{id}',
                   ],
                 ],
               ],
@@ -312,8 +342,10 @@ class LogotypesConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
-                  'parts' => [
-                    'random',
+                  'segments' => [
+                    [
+                      'lit' => 'random',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -324,6 +356,9 @@ class LogotypesConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'random',
                   ],
                 ],
               ],

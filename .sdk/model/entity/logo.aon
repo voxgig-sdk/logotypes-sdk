@@ -30,8 +30,10 @@ main: kit: entity: logo: {
           }
           method: "GET"
           orig: "/random"
-          parts: [
-            "random"
+          segments: [
+            {
+              lit: "random"
+            }
           ]
           select: {
             exist: [

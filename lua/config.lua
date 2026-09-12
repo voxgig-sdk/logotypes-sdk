@@ -66,13 +66,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/all",
-                ["parts"] = {
-                  "all",
+                ["segments"] = {
+                  {
+                    ["lit"] = "all",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "all",
                 },
               },
             },
@@ -131,9 +136,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/random/data",
-                ["parts"] = {
-                  "random",
-                  "data",
+                ["segments"] = {
+                  {
+                    ["lit"] = "random",
+                  },
+                  {
+                    ["lit"] = "data",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -144,6 +153,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "random",
+                  "data",
                 },
               },
               {
@@ -162,13 +175,17 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{logoName}/data",
-                ["parts"] = {
-                  "{logo_name}",
-                  "data",
-                },
                 ["rename"] = {
                   ["param"] = {
                     ["logoName"] = "logo_name",
+                  },
+                },
+                ["segments"] = {
+                  {
+                    ["var"] = "logo_name",
+                  },
+                  {
+                    ["lit"] = "data",
                   },
                 },
                 ["select"] = {
@@ -179,6 +196,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "{logo_name}",
+                  "data",
                 },
               },
             },
@@ -194,6 +215,10 @@ local function make_config()
             ["name"] = "id",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "get_logo_by_name",
         ["op"] = {
@@ -231,12 +256,14 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{logoName}",
-                ["parts"] = {
-                  "{id}",
-                },
                 ["rename"] = {
                   ["param"] = {
                     ["logoName"] = "id",
+                  },
+                },
+                ["segments"] = {
+                  {
+                    ["var"] = "id",
                   },
                 },
                 ["select"] = {
@@ -249,6 +276,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "{id}",
                 },
               },
             },
@@ -286,8 +316,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/random",
-                ["parts"] = {
-                  "random",
+                ["segments"] = {
+                  {
+                    ["lit"] = "random",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -298,6 +330,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "random",
                 },
               },
             },

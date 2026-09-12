@@ -78,14 +78,19 @@ module LogotypesConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/all",
-                  "parts" => [
-                    "all",
+                  "segments" => [
+                    {
+                      "lit" => "all",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "all",
+                  ],
                 },
               ],
             },
@@ -143,9 +148,13 @@ module LogotypesConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random/data",
-                  "parts" => [
-                    "random",
-                    "data",
+                  "segments" => [
+                    {
+                      "lit" => "random",
+                    },
+                    {
+                      "lit" => "data",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -157,6 +166,10 @@ module LogotypesConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "random",
+                    "data",
+                  ],
                 },
                 {
                   "args" => {
@@ -174,15 +187,19 @@ module LogotypesConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{logoName}/data",
-                  "parts" => [
-                    "{logo_name}",
-                    "data",
-                  ],
                   "rename" => {
                     "param" => {
                       "logoName" => "logo_name",
                     },
                   },
+                  "segments" => [
+                    {
+                      "var" => "logo_name",
+                    },
+                    {
+                      "lit" => "data",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "logo_name",
@@ -192,6 +209,10 @@ module LogotypesConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "{logo_name}",
+                    "data",
+                  ],
                 },
               ],
             },
@@ -207,6 +228,10 @@ module LogotypesConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "get_logo_by_name",
           "op" => {
             "load" => {
@@ -243,14 +268,16 @@ module LogotypesConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{logoName}",
-                  "parts" => [
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "logoName" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -262,6 +289,9 @@ module LogotypesConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -298,8 +328,10 @@ module LogotypesConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
-                  "parts" => [
-                    "random",
+                  "segments" => [
+                    {
+                      "lit" => "random",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -311,6 +343,9 @@ module LogotypesConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "random",
+                  ],
                 },
               ],
             },

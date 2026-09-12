@@ -70,13 +70,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/all",
-								"parts": []any{
-									"all",
+								"segments": []any{
+									map[string]any{
+										"lit": "all",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"all",
 								},
 							},
 						},
@@ -135,9 +140,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/random/data",
-								"parts": []any{
-									"random",
-									"data",
+								"segments": []any{
+									map[string]any{
+										"lit": "random",
+									},
+									map[string]any{
+										"lit": "data",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -148,6 +157,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"random",
+									"data",
 								},
 							},
 							map[string]any{
@@ -166,13 +179,17 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/{logoName}/data",
-								"parts": []any{
-									"{logo_name}",
-									"data",
-								},
 								"rename": map[string]any{
 									"param": map[string]any{
 										"logoName": "logo_name",
+									},
+								},
+								"segments": []any{
+									map[string]any{
+										"var": "logo_name",
+									},
+									map[string]any{
+										"lit": "data",
 									},
 								},
 								"select": map[string]any{
@@ -183,6 +200,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"{logo_name}",
+									"data",
 								},
 							},
 						},
@@ -198,6 +219,10 @@ func MakeConfig() map[string]any {
 						"name": "id",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "get_logo_by_name",
 				"op": map[string]any{
@@ -235,12 +260,14 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/{logoName}",
-								"parts": []any{
-									"{id}",
-								},
 								"rename": map[string]any{
 									"param": map[string]any{
 										"logoName": "id",
+									},
+								},
+								"segments": []any{
+									map[string]any{
+										"var": "id",
 									},
 								},
 								"select": map[string]any{
@@ -253,6 +280,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"{id}",
 								},
 							},
 						},
@@ -290,8 +320,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/random",
-								"parts": []any{
-									"random",
+								"segments": []any{
+									map[string]any{
+										"lit": "random",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -303,6 +335,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"random",
+								},
 							},
 						},
 					},
@@ -313,6 +348,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

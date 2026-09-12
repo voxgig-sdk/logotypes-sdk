@@ -53,14 +53,16 @@ main: kit: entity: get_logo_by_name: {
           }
           method: "GET"
           orig: "/{logoName}"
-          parts: [
-            "{id}"
-          ]
           rename: {
             param: {
               logoName: "id"
             }
           }
+          segments: [
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

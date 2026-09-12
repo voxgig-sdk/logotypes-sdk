@@ -1,6 +1,14 @@
 # Logotypes SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -87,14 +95,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/all",
-                "parts": [
-                  "all",
+                "segments": [
+                  {
+                    "lit": "all",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "all",
+                ],
               },
             ],
           },
@@ -152,9 +165,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/data",
-                "parts": [
-                  "random",
-                  "data",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "data",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -166,6 +183,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "random",
+                  "data",
+                ],
               },
               {
                 "args": {
@@ -183,15 +204,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/{logoName}/data",
-                "parts": [
-                  "{logo_name}",
-                  "data",
-                ],
                 "rename": {
                   "param": {
                     "logoName": "logo_name",
                   },
                 },
+                "segments": [
+                  {
+                    "var": "logo_name",
+                  },
+                  {
+                    "lit": "data",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "logo_name",
@@ -201,6 +226,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "{logo_name}",
+                  "data",
+                ],
               },
             ],
           },
@@ -216,6 +245,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "get_logo_by_name",
         "op": {
           "load": {
@@ -252,14 +285,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/{logoName}",
-                "parts": [
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "logoName": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -271,6 +306,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "{id}",
+                ],
               },
             ],
           },
@@ -307,8 +345,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random",
-                "parts": [
-                  "random",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -320,6 +360,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "random",
+                ],
               },
             ],
           },

@@ -57,9 +57,13 @@ main: kit: entity: data: {
           }
           method: "GET"
           orig: "/random/data"
-          parts: [
-            "random"
-            "data"
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "data"
+            }
           ]
           select: {
             exist: [
@@ -87,15 +91,19 @@ main: kit: entity: data: {
           }
           method: "GET"
           orig: "/{logoName}/data"
-          parts: [
-            "{logo_name}"
-            "data"
-          ]
           rename: {
             param: {
               logoName: "logo_name"
             }
           }
+          segments: [
+            {
+              var: "logo_name"
+            }
+            {
+              lit: "data"
+            }
+          ]
           select: {
             exist: [
               "logo_name"
