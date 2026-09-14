@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { LogotypesSDK } from '@voxgig-sdk/logotypes'
+import { LogotypesSDK } from '@voxgig-sdk/logotypes-sdk'
 
 const client = new LogotypesSDK()
 ```
@@ -512,7 +512,7 @@ logotypes/
 Import the SDK from the package root:
 
 ```ts
-import { LogotypesSDK } from '@voxgig-sdk/logotypes'
+import { LogotypesSDK } from '@voxgig-sdk/logotypes-sdk'
 ```
 
 ### Entity state

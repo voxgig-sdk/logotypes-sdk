@@ -105,7 +105,7 @@ local results, err = client:Data():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
+| TypeScript | `@voxgig-sdk/logotypes-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
 | Python | `voxgig-sdk-logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
 | PHP | `voxgig-sdk/logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/logotypes-sdk/go` | `go get github.com/voxgig-sdk/logotypes-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Data():list()
 ### TypeScript
 
 ```ts
-import { LogotypesSDK } from '@voxgig-sdk/logotypes'
+import { LogotypesSDK } from '@voxgig-sdk/logotypes-sdk'
 
 const client = new LogotypesSDK()
 
