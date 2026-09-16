@@ -16,5 +16,70 @@
     "get_logo_by_name": {
       "get_logo_by_name_ref01": {}
     }
+  },
+  "requests": {
+    "GET /{logoName}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getLogoByName",
+        "parameters": [
+          {
+            "description": "The name of the logo to retrieve (e.g., 'spotify', 'apple')",
+            "example": "spotify",
+            "in": "path",
+            "name": "logoName",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The variant of the logo to retrieve",
+            "in": "query",
+            "name": "variant",
+            "required": false,
+            "schema": {
+              "enum": [
+                "glyph",
+                "wordmark"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "The color version of the logo to retrieve",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "schema": {
+              "enum": [
+                "color",
+                "white",
+                "black"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "image/svg+xml": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successfully retrieved the specified logo image"
+          },
+          "404": {
+            "description": "Logo not found"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

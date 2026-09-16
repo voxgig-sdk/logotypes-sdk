@@ -55,6 +55,12 @@ main: kit: entity: data: {
               }
             ]
           }
+          contract: {
+            id: "GET /random/data"
+            json: "{\"operationId\":\"getRandomLogoData\",\"parameters\":[{\"description\":\"The variant of the logo to retrieve data for\",\"in\":\"query\",\"name\":\"variant\",\"required\":false,\"schema\":{\"enum\":[\"glyph\",\"wordmark\"],\"type\":\"string\"}},{\"description\":\"The color version of the logo to retrieve data for\",\"in\":\"query\",\"name\":\"version\",\"required\":false,\"schema\":{\"enum\":[\"color\",\"white\",\"black\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Metadata information about a logo\",\"properties\":{\"name\":{\"description\":\"The name of the logo\",\"example\":\"spotify\",\"type\":\"string\"},\"url\":{\"description\":\"The URL to access the logo\",\"example\":\"https://www.logotypes.dev/spotify\",\"type\":\"string\"},\"variants\":{\"description\":\"Available variants for the logo\",\"items\":{\"enum\":[\"glyph\",\"wordmark\"],\"type\":\"string\"},\"type\":\"array\"},\"versions\":{\"description\":\"Available color versions for the logo\",\"items\":{\"enum\":[\"color\",\"white\",\"black\"],\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved random logo data\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/random/data"
           segments: [
@@ -88,6 +94,12 @@ main: kit: entity: data: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /{logoName}/data"
+            json: "{\"operationId\":\"getLogoDataByName\",\"parameters\":[{\"description\":\"The name of the logo to retrieve data for (e.g., 'spotify', 'apple')\",\"example\":\"spotify\",\"in\":\"path\",\"name\":\"logoName\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Metadata information about a logo\",\"properties\":{\"name\":{\"description\":\"The name of the logo\",\"example\":\"spotify\",\"type\":\"string\"},\"url\":{\"description\":\"The URL to access the logo\",\"example\":\"https://www.logotypes.dev/spotify\",\"type\":\"string\"},\"variants\":{\"description\":\"Available variants for the logo\",\"items\":{\"enum\":[\"glyph\",\"wordmark\"],\"type\":\"string\"},\"type\":\"array\"},\"versions\":{\"description\":\"Available color versions for the logo\",\"items\":{\"enum\":[\"color\",\"white\",\"black\"],\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved logo data\"},\"404\":{\"description\":\"Logo not found\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/{logoName}/data"

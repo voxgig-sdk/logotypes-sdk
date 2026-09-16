@@ -37,6 +37,12 @@ main: kit: entity: all: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /all"
+            json: "{\"operationId\":\"getAllLogosData\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"description\":\"Metadata information about a logo\",\"properties\":{\"name\":{\"description\":\"The name of the logo\",\"example\":\"spotify\",\"type\":\"string\"},\"url\":{\"description\":\"The URL to access the logo\",\"example\":\"https://www.logotypes.dev/spotify\",\"type\":\"string\"},\"variants\":{\"description\":\"Available variants for the logo\",\"items\":{\"enum\":[\"glyph\",\"wordmark\"],\"type\":\"string\"},\"type\":\"array\"},\"versions\":{\"description\":\"Available color versions for the logo\",\"items\":{\"enum\":[\"color\",\"white\",\"black\"],\"type\":\"string\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successfully retrieved all logos data\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/all"
           segments: [

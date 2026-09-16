@@ -16,5 +16,57 @@
     "logo": {
       "logo_ref01": {}
     }
+  },
+  "requests": {
+    "GET /random": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getRandomLogo",
+        "parameters": [
+          {
+            "description": "The variant of the logo to retrieve",
+            "in": "query",
+            "name": "variant",
+            "required": false,
+            "schema": {
+              "enum": [
+                "glyph",
+                "wordmark"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "The color version of the logo to retrieve",
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "schema": {
+              "enum": [
+                "color",
+                "white",
+                "black"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "image/svg+xml": {
+                "schema": {
+                  "format": "binary",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successfully retrieved a random logo image"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

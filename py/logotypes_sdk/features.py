@@ -1,12 +1,18 @@
 # Logotypes SDK feature factory
 
 from logotypes_sdk.feature.base_feature import LogotypesBaseFeature
+from logotypes_sdk.feature.ratelimit_feature import LogotypesRatelimitFeature
+from logotypes_sdk.feature.retry_feature import LogotypesRetryFeature
 from logotypes_sdk.feature.test_feature import LogotypesTestFeature
+from logotypes_sdk.feature.timeout_feature import LogotypesTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: LogotypesBaseFeature(),
+    "ratelimit": lambda: LogotypesRatelimitFeature(),
+    "retry": lambda: LogotypesRetryFeature(),
     "test": lambda: LogotypesTestFeature(),
+    "timeout": lambda: LogotypesTimeoutFeature(),
 }
 
 

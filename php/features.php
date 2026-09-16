@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Logotypes SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class LogotypesFeatures
@@ -14,8 +17,14 @@ class LogotypesFeatures
         switch ($name) {
             case "base":
                 return new LogotypesBaseFeature();
+            case "ratelimit":
+                return new LogotypesRatelimitFeature();
+            case "retry":
+                return new LogotypesRetryFeature();
             case "test":
                 return new LogotypesTestFeature();
+            case "timeout":
+                return new LogotypesTimeoutFeature();
             default:
                 return new LogotypesBaseFeature();
         }
@@ -31,7 +40,10 @@ class LogotypesFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
