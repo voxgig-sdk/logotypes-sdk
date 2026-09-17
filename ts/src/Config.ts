@@ -127,18 +127,18 @@ class Config {
 
     entity: {
       
-      all: {
-      },
-
-      data: {
-      },
-
-      get_logo_by_name: {
-      },
-
-      logo: {
-      },
-
+        all: {
+        },
+  
+        data: {
+        },
+  
+        get_logo_by_name: {
+        },
+  
+        logo: {
+        },
+  
     }
   }
 

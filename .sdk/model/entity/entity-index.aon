@@ -1,6 +1,6 @@
 # Entity Models
 
-@"all.aon"
-@"data.aon"
-@"get_logo_by_name.aon"
-@"logo.aon"
+@"./all.aon"
+@"./data.aon"
+@"./get_logo_by_name.aon"
+@"./logo.aon"

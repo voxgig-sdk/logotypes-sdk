@@ -105,12 +105,12 @@ local results, err = client:Data():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/logotypes-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
-| Python | `voxgig-sdk-logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
-| PHP | `voxgig-sdk/logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
+| TypeScript | `@voxgig-sdk/logotypes-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/tags) |
+| Python | `voxgig-sdk-logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/tags) |
+| PHP | `voxgig-sdk/logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/logotypes-sdk/go` | `go get github.com/voxgig-sdk/logotypes-sdk/go@latest` |
-| Ruby | `voxgig-sdk-logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
-| Lua | `voxgig-sdk-logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/releases) |
+| Ruby | `voxgig-sdk-logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/tags) |
+| Lua | `voxgig-sdk-logotypes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/logotypes-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/logotypes-sdk/go-cli` | `go install github.com/voxgig-sdk/logotypes-sdk/go-cli/cmd/logotypes@latest` |
 | Go MCP server | `github.com/voxgig-sdk/logotypes-sdk/go-mcp` | `go get github.com/voxgig-sdk/logotypes-sdk/go-mcp@latest` |
 
